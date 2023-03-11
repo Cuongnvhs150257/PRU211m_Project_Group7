@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3564997697409620436}
   - component: {fileID: 3785089726116017510}
   - component: {fileID: 4825419724012229919}
+  - component: {fileID: 64225473950404828}
   m_Layer: 0
   m_Name: friezel
   m_TagString: items
@@ -111,3 +112,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.512, y: 0.512}
   m_EdgeRadius: 0
+--- !u!114 &64225473950404828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3661613402215055268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 187a4394877d5b9409b1e227064a857a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

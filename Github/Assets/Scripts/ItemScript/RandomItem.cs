@@ -18,14 +18,46 @@ public class RandomItem : MonoBehaviour
     // The minimum distance between items
     public float minDistance = 5f;
 
+    //Time between 2 spams
+    Timer spawmTimer;
+
+    //Time to detroy items
+    Timer detroyTimer;
+
     // Start is called before the first frame update
     void Start()
     {
-        spawmItem();
+        spawmTimer = gameObject.GetComponent<Timer>();
+        detroyTimer = gameObject.GetComponent<Timer>();
+        spawmTimer.Duration = 5;
+        spawmTimer.Run();
+        detroyTimer.Duration = 10;
+        detroyTimer.Run();
+    }
+
+    void Update()
+    {
+        if (detroyTimer.Finished)
+        {
+            detroyItems();
+        }
+
+        if (spawmTimer.Finished)
+        {
+            spawmItem();
+            spawmTimer.Duration = 15;
+            spawmTimer.Run();
+
+            detroyTimer.Duration = 10;
+            detroyTimer.Run();
+            
+        }
+        
     }
 
     private void spawmItem()
     {
+
         // Spawn items randomly on the map
         for (int i = 0; i < itemCount; i++)
         {
@@ -56,6 +88,14 @@ public class RandomItem : MonoBehaviour
             {
                 Instantiate(toSpawn, position, Quaternion.identity);
             }
+        }
+    }
+
+    private void detroyItems()
+    {
+        foreach (GameObject o in GameObject.FindGameObjectsWithTag("items"))
+        {
+            Destroy(o);
         }
     }
 }
