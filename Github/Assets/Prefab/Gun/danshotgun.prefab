@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1300540948683414747}
   - component: {fileID: 1989640608387656090}
   - component: {fileID: 884484089505099200}
+  - component: {fileID: 5013363268473866155}
   m_Layer: 0
   m_Name: danshotgun
   m_TagString: Untagged
@@ -106,3 +107,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &5013363268473866155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4139240162397465666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25706f150427d7f459f0eb5ee8576f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

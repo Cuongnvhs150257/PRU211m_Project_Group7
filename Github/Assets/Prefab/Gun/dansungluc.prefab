@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 483014966027025004}
   - component: {fileID: 9158500438808422952}
   - component: {fileID: -2471335809662210416}
+  - component: {fileID: 5171396257858071915}
   m_Layer: 0
   m_Name: dansungluc
   m_TagString: Untagged
@@ -106,3 +107,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &5171396257858071915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7034118418158021010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25706f150427d7f459f0eb5ee8576f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
