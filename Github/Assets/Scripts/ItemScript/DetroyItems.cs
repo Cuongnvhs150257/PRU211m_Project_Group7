@@ -4,17 +4,7 @@ using UnityEngine;
 
 public class DetroyItems : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public ItemEffect itemEffect;
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -23,6 +13,7 @@ public class DetroyItems : MonoBehaviour
         {
 
             Destroy(gameObject);
+            itemEffect.Activate(collision.gameObject);
         }
     }
 }
