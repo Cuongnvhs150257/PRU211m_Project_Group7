@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 507329401580268924}
   - component: {fileID: 2412938269943396228}
   - component: {fileID: -3297816972101431224}
+  - component: {fileID: 1050203699170065207}
   m_Layer: 0
   m_Name: FlyEnemy
   m_TagString: enemies
@@ -100,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.5
   stoppingDistance: 4
+  Friezel: 0
 --- !u!50 &-3297816972101431224
 Rigidbody2D:
   serializedVersion: 4
@@ -121,3 +123,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1050203699170065207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669900828237294959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b58dfbb5f09c1845ab66bcc1117bfda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 7835114629280961084, guid: 75d5278931f57e142bd164ef8443be71, type: 3}
+  bulletTransform: {fileID: 6837515466076534057}
+  canFire: 1
+  targetObject: {fileID: 8726538467131895403, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
