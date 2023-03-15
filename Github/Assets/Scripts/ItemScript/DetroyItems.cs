@@ -11,7 +11,6 @@ public class DetroyItems : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
-
             Destroy(gameObject);
             itemEffect.Activate(collision.gameObject);
         }

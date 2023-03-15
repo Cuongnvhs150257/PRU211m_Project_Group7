@@ -6,6 +6,7 @@ TagManager:
   tags:
   - items
   - rock
+  - enemies
   layers:
   - Default
   - TransparentFX
