@@ -38,5 +38,10 @@ public class Player : MonoBehaviour
                 transform.localScale = new Vector3(-1, 1, 0);
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            MenuManager.GoToMenu(MenuName.Pause);
+        }
     }
 }
