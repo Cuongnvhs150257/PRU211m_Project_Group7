@@ -36,7 +36,7 @@ public class TieuLienScript : MonoBehaviour
         {
             GameObject shot = Instantiate<GameObject>(bullet, transform.position, bulletTransform.localRotation);
             shot.transform.rotation = Quaternion.Euler(new Vector3(0, 0, oppositeAngle));
-            Debug.Log("addforce ne: " + (targetObject.transform.position - transform.position));
+            //Debug.Log("addforce ne: " + (targetObject.transform.position - transform.position));
             shot.GetComponent<Rigidbody2D>().AddForce((nongsung.transform.position - transform.position) * 10, ForceMode2D.Impulse);
             timer = 0;
         }
