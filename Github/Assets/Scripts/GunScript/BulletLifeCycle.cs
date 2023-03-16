@@ -24,8 +24,14 @@ public class BulletLifeCycle : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        GameObject obj = other.gameObject;
         if (other.gameObject.CompareTag("enemies"))
         {
+            obj.gameObject.GetComponent<EnemyProperties>().Hp--;
+            if (obj.gameObject.GetComponent<EnemyProperties>().Hp <= 0)
+            {
+                Destroy(obj.gameObject);
+            }
             //destroy bullet
             Destroy(gameObject);
         }
