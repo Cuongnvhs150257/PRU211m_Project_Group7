@@ -17,7 +17,6 @@ public class TieuLienScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Luong dame cua sung: " + transform.GetComponent<TieuLienProperties>().Dame);
     }
 
     // Update is called once per frame
@@ -56,8 +55,6 @@ public class TieuLienScript : MonoBehaviour
             timer = 0;
         }
 
-            transform.GetComponent<TieuLienProperties>().Dame = 13;
-            Debug.Log("Luong dame cua sung: " + transform.GetComponent<TieuLienProperties>().Dame);
         }
 }
 

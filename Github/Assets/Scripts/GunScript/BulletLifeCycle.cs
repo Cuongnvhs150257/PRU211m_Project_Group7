@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class BulletLifeCycle : MonoBehaviour
 {
+    public int dame = 5;
+    public int Dame
+    {
+        get { return dame; }
+        set { dame = value; }
+    }
     // Start is called before the first frame update
     private float timer;
     void Start()
@@ -27,11 +33,13 @@ public class BulletLifeCycle : MonoBehaviour
         GameObject obj = other.gameObject;
         if (other.gameObject.CompareTag("enemies"))
         {
-            obj.gameObject.GetComponent<EnemyProperties>().Hp--;
+            //tru di dame cua sung
+            obj.gameObject.GetComponent<EnemyProperties>().Hp-= dame;
             if (obj.gameObject.GetComponent<EnemyProperties>().Hp <= 0)
             {
                 Destroy(obj.gameObject);
             }
+
             //destroy bullet
             Destroy(gameObject);
         }
