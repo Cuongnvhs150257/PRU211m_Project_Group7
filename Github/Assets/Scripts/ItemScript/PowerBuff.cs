@@ -9,7 +9,7 @@ public class PowerBuff : ItemEffect
     public bool shield;
     public bool friezel;
 
-    
+    Time time;
 
     public override void Activate(GameObject target)
     {
@@ -19,6 +19,9 @@ public class PowerBuff : ItemEffect
         }else if (shield)
         {
             Debug.Log("Shield Activated");
+            GameObject takedame = GameObject.FindGameObjectWithTag("Player");
+
+            takedame.transform.GetComponent<Healthmanage>().shieldActivated = true;
         }
         else
         {

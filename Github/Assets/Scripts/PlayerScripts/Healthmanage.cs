@@ -8,6 +8,13 @@ public class Healthmanage : MonoBehaviour
     // Start is called before the first frame update
     public Image healBar;
     public float healthAmount = 100f;
+
+    public bool shieldActivated = false;
+
+    public float dame = 10;
+
+    float timer;
+
     [SerializeField]
     GameObject player;
     // Start is called before the first frame update
@@ -21,22 +28,40 @@ public class Healthmanage : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.G))
         {
-            takeDamage(10);
+            takeDamage(dame);
         }
         if (Input.GetKeyDown(KeyCode.J))
         {
             Heal(15);
         }
+
+        if (shieldActivated == true)
+        {
+            dame = 0;
+            timer += Time.deltaTime;
+            if (timer >= 3)
+            {
+                dame = 10;
+                timer = 0;
+            }
+        }
+        else
+        {
+            dame = 10;
+        }
+
     }
     public void takeDamage(float dame)
     {
-        healthAmount -= dame;
-        healBar.fillAmount = healthAmount / 100f;
+            
+            healthAmount -= dame;
+            healBar.fillAmount = healthAmount / 100f;
 
-        if(healthAmount <= 0)
-        {             
-            Time.timeScale = 0;
-        }
+            if (healthAmount <= 0)
+            {
+                Time.timeScale = 0;
+            }
+
     }
     public void Heal(float healingAmount)
     {
@@ -48,7 +73,7 @@ public class Healthmanage : MonoBehaviour
     {
         if (other.gameObject.CompareTag("enemies"))
         {
-            takeDamage(10);
+            takeDamage(dame);
         }
         if (other.gameObject.CompareTag("testheal"))
         {
