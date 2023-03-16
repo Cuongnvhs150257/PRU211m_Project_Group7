@@ -2,22 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TieuLienScript : MonoBehaviour
+public class SunglucScript : MonoBehaviour
 {
     private Camera mainCam;
     public GameObject bullet;
     public Transform mainCharacter;
     public Transform nongsung;
     private float timer;
-    private float timeBetweenFire=0.25f;
+    private float timeBetweenFire = 1f;
     private Rigidbody2D rb;
     Vector2 spawnLocation = Vector2.zero;
-    private float yPositionForRotate = 0.1938882f;
-    private float xPosiotionForRotate = 0.2431382f;
+    private float yPositionForRotate = 0.2188364f;
+    private float xPosiotionForRotate = 0.1701825f;
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Luong dame cua sung: " + transform.GetComponent<TieuLienProperties>().Dame);
+
     }
 
     // Update is called once per frame
@@ -34,32 +34,28 @@ public class TieuLienScript : MonoBehaviour
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, oppositeAngle));
 
             if (transform.eulerAngles.z > 90 && transform.eulerAngles.z < 270)
-        {
-            Vector3 vtr = new Vector3(transform.localScale.x, -transform.localScale.y, 0);
-            transform.localScale = new Vector3(xPosiotionForRotate, -yPositionForRotate, 0);
-            Debug.Log("Ket qua: " + transform.localScale);
-        }
-        else
-        {
-            Vector3 vtr = new Vector3(transform.localScale.x, transform.localScale.y, 0);
-            transform.localScale = new Vector3(xPosiotionForRotate, yPositionForRotate, 0);
-        }
+            {
+                Vector3 vtr = new Vector3(transform.localScale.x, -transform.localScale.y, 0);
+                transform.localScale = new Vector3(xPosiotionForRotate, -yPositionForRotate, 0);
+                Debug.Log("Ket qua: " + transform.localScale);
+            }
+            else
+            {
+                Vector3 vtr = new Vector3(transform.localScale.x, transform.localScale.y, 0);
+                transform.localScale = new Vector3(xPosiotionForRotate, yPositionForRotate, 0);
+            }
 
 
-        timer += Time.deltaTime;
-        if (timer >= timeBetweenFire)
-        {
-            GameObject shot = Instantiate<GameObject>(bullet, transform.position, mainCharacter.localRotation);
-            shot.transform.rotation = Quaternion.Euler(new Vector3(0, 0, oppositeAngle));
-            //Debug.Log("addforce ne: " + (targetObject.transform.position - transform.position));
-            shot.GetComponent<Rigidbody2D>().AddForce((nongsung.transform.position - transform.position) * 10, ForceMode2D.Impulse);
-            timer = 0;
+            timer += Time.deltaTime;
+            if (timer >= timeBetweenFire)
+            {
+                GameObject shot = Instantiate<GameObject>(bullet, transform.position, mainCharacter.localRotation);
+                shot.transform.rotation = Quaternion.Euler(new Vector3(0, 0, oppositeAngle));
+                shot.GetComponent<Rigidbody2D>().AddForce((nongsung.transform.position - transform.position) * 10, ForceMode2D.Impulse);
+                timer = 0;
+            }
         }
-
-            transform.GetComponent<TieuLienProperties>().Dame = 13;
-            Debug.Log("Luong dame cua sung: " + transform.GetComponent<TieuLienProperties>().Dame);
-        }
-}
+    }
 
     private GameObject getNearestEnemy()
     {
@@ -79,5 +75,4 @@ public class TieuLienScript : MonoBehaviour
 
         return targetEnemy;
     }
-
 }

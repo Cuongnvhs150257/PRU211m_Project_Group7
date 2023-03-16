@@ -185,5 +185,4 @@ MonoBehaviour:
   bullet: {fileID: 7501223957499516122, guid: a08a8a36d7f4be842900b177517c173b, type: 3}
   bulletTransform: {fileID: 0}
   nongsung: {fileID: 1918757760083169018}
-  canFire: 1
-  targetObject: {fileID: 0}
+  timeBetweenFire: 0

@@ -21,4 +21,13 @@ public class BulletLifeCycle : MonoBehaviour
             timer = 0;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("enemies"))
+        {
+            //destroy bullet
+            Destroy(gameObject);
+        }
+    }
 }

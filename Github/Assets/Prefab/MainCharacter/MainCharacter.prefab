@@ -411,7 +411,8 @@ PrefabInstance:
       propertyPath: bulletTransform
       value: 
       objectReference: {fileID: 8726538467131895403}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4244637519964483927, guid: df4e1aeb5f5ab084ab40a14b53014d90, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: df4e1aeb5f5ab084ab40a14b53014d90, type: 3}
 --- !u!4 &8726538466707426524 stripped
 Transform:
@@ -551,7 +552,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1598428896069315929, guid: 73342377a789c2140a2bcb306f5acac0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 73342377a789c2140a2bcb306f5acac0, type: 3}
 --- !u!4 &8726538467898936973 stripped
 Transform:
