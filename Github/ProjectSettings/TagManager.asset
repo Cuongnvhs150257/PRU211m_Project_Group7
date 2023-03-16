@@ -7,6 +7,8 @@ TagManager:
   - items
   - rock
   - enemies
+  - testenemy
+  - testheal
   layers:
   - Default
   - TransparentFX
