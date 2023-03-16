@@ -27,6 +27,7 @@ public class FlyFollowPlayer : MonoBehaviour
             timer += Time.deltaTime;
             if(timer >= 3)
             {
+                Friezel = false ;
                 speed = 0.9f;
                 timer = 0;
             }
