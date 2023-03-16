@@ -901,8 +901,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8726538466707426522, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726538466707426522, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
       propertyPath: targetObject
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726538466707426522, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
+      propertyPath: timeBetweenFire
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8726538467131895393, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
       propertyPath: joyStick
@@ -960,9 +968,25 @@ PrefabInstance:
       propertyPath: targetObject
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8726538467193336457, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
+      propertyPath: timeBetweenFire
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726538467898936971, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 6081383376747602757, guid: e3c05957d886c2a4d9f3b9db015b1ffa, type: 3}
+    - target: {fileID: 8726538467898936971, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8726538467898936971, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
       propertyPath: targetObject
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726538467898936971, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
+      propertyPath: timeBetweenFire
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
