@@ -16,7 +16,13 @@ public class PowerBuff : ItemEffect
         if (healthBuff)
         {
             Debug.Log("Health ++");
-        }else if (shield)
+
+            GameObject takedame = GameObject.FindGameObjectWithTag("Player");
+
+            takedame.transform.GetComponent<Healthmanage>().addHealth = true;
+
+        }
+        else if (shield)
         {
             Debug.Log("Shield Activated");
             GameObject takedame = GameObject.FindGameObjectWithTag("Player");

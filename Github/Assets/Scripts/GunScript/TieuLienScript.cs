@@ -37,7 +37,7 @@ public class TieuLienScript : MonoBehaviour
         {
             Vector3 vtr = new Vector3(transform.localScale.x, -transform.localScale.y, 0);
             transform.localScale = new Vector3(xPosiotionForRotate, -yPositionForRotate, 0);
-            Debug.Log("Ket qua: " + transform.localScale);
+            //Debug.Log("Ket qua: " + transform.localScale);
         }
         else
         {

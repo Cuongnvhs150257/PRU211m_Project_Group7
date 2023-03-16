@@ -29,6 +29,7 @@ public class BasicFollow : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= 3)
             {
+                Friezel = false;
                 speed = 0.5f;
                 timer = 0;
             }

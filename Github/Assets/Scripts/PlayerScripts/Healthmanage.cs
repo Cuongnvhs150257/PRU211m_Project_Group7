@@ -11,6 +11,8 @@ public class Healthmanage : MonoBehaviour
 
     public bool shieldActivated = false;
 
+    public bool addHealth = false;
+
     public float dame = 10;
 
     float timer;
@@ -41,6 +43,7 @@ public class Healthmanage : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= 3)
             {
+                shieldActivated = false;
                 dame = 10;
                 timer = 0;
             }
@@ -48,6 +51,12 @@ public class Healthmanage : MonoBehaviour
         else
         {
             dame = 10;
+        }
+
+        if(addHealth == true)
+        {
+            Heal(10);
+            addHealth = false;
         }
 
     }
