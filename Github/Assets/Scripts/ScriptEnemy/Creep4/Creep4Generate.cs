@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicGenerate : MonoBehaviour
+public class Creep4Generate : MonoBehaviour
 {
     const int SpawnBorderSize = 100;
     int minSpawnX;
@@ -21,7 +21,7 @@ public class BasicGenerate : MonoBehaviour
 
         //create and start timer
         spawnTimer = gameObject.AddComponent<Timer>();
-        spawnTimer.Duration = 2;
+        spawnTimer.Duration = 5;
         spawnTimer.Run();
     }
 
@@ -32,7 +32,7 @@ public class BasicGenerate : MonoBehaviour
         if (spawnTimer.Finished)
         {
             SpawnObject();
-            spawnTimer.Duration = 2;
+            spawnTimer.Duration = 5;
             spawnTimer.Run();
         }
     }
