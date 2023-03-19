@@ -7,6 +7,7 @@ public class Healthmanage : MonoBehaviour
 {
     // Start is called before the first frame update
     public Image healBar;
+    
     public float healthAmount = 100f;
 
     public bool shieldActivated = false;
@@ -19,10 +20,11 @@ public class Healthmanage : MonoBehaviour
 
     [SerializeField]
     GameObject player;
+    public Text healText;
     // Start is called before the first frame update
     void Start()
     {
-
+        healText.text = "HP: " + healthAmount.ToString();
     }
 
     // Update is called once per frame
@@ -31,6 +33,7 @@ public class Healthmanage : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.G))
         {
             takeDamage(dame);
+
         }
         if (Input.GetKeyDown(KeyCode.J))
         {
@@ -53,7 +56,7 @@ public class Healthmanage : MonoBehaviour
             dame = 10;
         }
 
-        if(addHealth == true)
+        if (addHealth == true)
         {
             Heal(10);
             addHealth = false;
@@ -62,14 +65,15 @@ public class Healthmanage : MonoBehaviour
     }
     public void takeDamage(float dame)
     {
-            
-            healthAmount -= dame;
-            healBar.fillAmount = healthAmount / 100f;
 
-            if (healthAmount <= 0)
-            {
-                Time.timeScale = 0;
-            }
+        healthAmount -= dame;
+        healBar.fillAmount = healthAmount / 100f;
+        healText.text = "HP: " + healthAmount.ToString();
+
+        if (healthAmount <= 0)
+        {
+            Time.timeScale = 0;
+        }
 
     }
     public void Heal(float healingAmount)
@@ -77,6 +81,7 @@ public class Healthmanage : MonoBehaviour
         healthAmount += healingAmount;
         healthAmount = Mathf.Clamp(healthAmount, 0, 100);
         healBar.fillAmount = healthAmount / 100;
+        healText.text = "HP: " + healthAmount.ToString();
     }
     public void OnCollisionEnter2D(Collision2D other)
     {

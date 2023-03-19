@@ -14,6 +14,8 @@ public class SunglucScript : MonoBehaviour
     Vector2 spawnLocation = Vector2.zero;
     private float yPositionForRotate = 0.2188364f;
     private float xPosiotionForRotate = 0.1701825f;
+    public AudioSource sungLucSound;
+    float distanceWorking = 7f;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +55,7 @@ public class SunglucScript : MonoBehaviour
                 shot.transform.rotation = Quaternion.Euler(new Vector3(0, 0, oppositeAngle));
                 shot.GetComponent<Rigidbody2D>().AddForce((nongsung.transform.position - transform.position) * 10, ForceMode2D.Impulse);
                 timer = 0;
+                sungLucSound.Play();
             }
         }
     }
@@ -66,7 +69,7 @@ public class SunglucScript : MonoBehaviour
         {
             GameObject obj = enemies[i];
             float objectDistance = Vector3.Distance(transform.position, obj.transform.position);
-            if (objectDistance < currentDistance)
+            if (objectDistance < currentDistance && objectDistance <= distanceWorking)
             {
                 targetEnemy = obj;
                 currentDistance = objectDistance;

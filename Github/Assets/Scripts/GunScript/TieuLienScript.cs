@@ -9,11 +9,12 @@ public class TieuLienScript : MonoBehaviour
     public Transform mainCharacter;
     public Transform nongsung;
     private float timer;
-    private float timeBetweenFire=0.25f;
+    private float timeBetweenFire = 0.25f;
     private Rigidbody2D rb;
     Vector2 spawnLocation = Vector2.zero;
     private float yPositionForRotate = 0.1938882f;
     private float xPosiotionForRotate = 0.2431382f;
+    public AudioSource tieuLienSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,30 +34,31 @@ public class TieuLienScript : MonoBehaviour
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, oppositeAngle));
 
             if (transform.eulerAngles.z > 90 && transform.eulerAngles.z < 270)
-        {
-            Vector3 vtr = new Vector3(transform.localScale.x, -transform.localScale.y, 0);
-            transform.localScale = new Vector3(xPosiotionForRotate, -yPositionForRotate, 0);
-            //Debug.Log("Ket qua: " + transform.localScale);
-        }
-        else
-        {
-            Vector3 vtr = new Vector3(transform.localScale.x, transform.localScale.y, 0);
-            transform.localScale = new Vector3(xPosiotionForRotate, yPositionForRotate, 0);
-        }
+            {
+                Vector3 vtr = new Vector3(transform.localScale.x, -transform.localScale.y, 0);
+                transform.localScale = new Vector3(xPosiotionForRotate, -yPositionForRotate, 0);
+                //Debug.Log("Ket qua: " + transform.localScale);
+            }
+            else
+            {
+                Vector3 vtr = new Vector3(transform.localScale.x, transform.localScale.y, 0);
+                transform.localScale = new Vector3(xPosiotionForRotate, yPositionForRotate, 0);
+            }
 
 
-        timer += Time.deltaTime;
-        if (timer >= timeBetweenFire)
-        {
-            GameObject shot = Instantiate<GameObject>(bullet, transform.position, mainCharacter.localRotation);
-            shot.transform.rotation = Quaternion.Euler(new Vector3(0, 0, oppositeAngle));
-            //Debug.Log("addforce ne: " + (targetObject.transform.position - transform.position));
-            shot.GetComponent<Rigidbody2D>().AddForce((nongsung.transform.position - transform.position) * 10, ForceMode2D.Impulse);
-            timer = 0;
-        }
+            timer += Time.deltaTime;
+            if (timer >= timeBetweenFire)
+            {
+                GameObject shot = Instantiate<GameObject>(bullet, transform.position, mainCharacter.localRotation);
+                shot.transform.rotation = Quaternion.Euler(new Vector3(0, 0, oppositeAngle));
+                //Debug.Log("addforce ne: " + (targetObject.transform.position - transform.position));
+                shot.GetComponent<Rigidbody2D>().AddForce((nongsung.transform.position - transform.position) * 10, ForceMode2D.Impulse);
+                timer = 0;
+                tieuLienSound.Play();
+            }
 
         }
-}
+    }
 
     private GameObject getNearestEnemy()
     {
