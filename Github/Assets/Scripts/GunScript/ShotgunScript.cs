@@ -14,7 +14,9 @@ public class ShotgunScript : MonoBehaviour
     Vector2 spawnLocation = Vector2.zero;
     private float yPositionForRotate = 0.2188364f;
     private float xPosiotionForRotate = 0.1701825f;
+    public AudioSource shotGunSound;
     // Start is called before the first frame update
+    float distanceWorking = 4.5f;
     void Start()
     {
         
@@ -53,6 +55,7 @@ public class ShotgunScript : MonoBehaviour
                 shot.transform.rotation = Quaternion.Euler(new Vector3(0, 0, oppositeAngle));
                 shot.GetComponent<Rigidbody2D>().AddForce((nongsung.transform.position - transform.position) * 10, ForceMode2D.Impulse);
                 timer = 0;
+                shotGunSound.Play();
             }
         }
     }
@@ -66,7 +69,7 @@ public class ShotgunScript : MonoBehaviour
         {
             GameObject obj = enemies[i];
             float objectDistance = Vector3.Distance(transform.position, obj.transform.position);
-            if (objectDistance < currentDistance)
+            if (objectDistance < currentDistance && objectDistance <= distanceWorking)
             {
                 targetEnemy = obj;
                 currentDistance = objectDistance;
