@@ -21,11 +21,11 @@ public class BaseDame : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if(timer >= 5)
+        if(timer >= 20)
         {
             baseDamage += 1;
             timer = 0;
-            Debug.Log("baseDame tang 1 :" + baseDamage);
+            
         }
     }
 }
