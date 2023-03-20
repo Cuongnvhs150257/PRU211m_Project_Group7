@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 7551060697598465009}
   m_Layer: 0
   m_Name: Creep2
-  m_TagString: Untagged
+  m_TagString: enemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
