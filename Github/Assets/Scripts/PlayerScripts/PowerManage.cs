@@ -8,6 +8,7 @@ public class PowerManage : MonoBehaviour
     float timer;
     public bool isPower;
     int count;
+    float timer2;
 
     public int Count
     {
@@ -27,18 +28,25 @@ public class PowerManage : MonoBehaviour
     {
         if (isPower == true)
         {
+            GameObject takedame = GameObject.FindGameObjectWithTag("Player");
+            //takedame.GetComponent<JoyStickMove>().velociad += 1;
+            takedame.GetComponent<BaseDame>().BaseDamage *= 2;
             timer += Time.deltaTime;
             if (timer >= 10)
             {
                 isPower = false;
                 timer = 0;
                 count = 0;
+                vongNo.SetActive(false);
+                //takedame.GetComponent<JoyStickMove>().velociad -= 2;
+                takedame.GetComponent<BaseDame>().BaseDamage /= 2;
+
             }
         }
         if (count == 3)
-        {
-            vongNo.SetActive(true);
-            isPower = true;
+        {          
+                vongNo.SetActive(true);
+                isPower = true;                         
         }
     }
 }

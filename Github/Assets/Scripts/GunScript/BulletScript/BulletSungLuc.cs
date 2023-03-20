@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletSungLuc : MonoBehaviour
-{
+{   
+
     public int dame;
     public int level;
     bool upLevel2 = true;
@@ -59,8 +60,11 @@ public class BulletSungLuc : MonoBehaviour
             //tru di dame cua sung
             obj.GetComponent<EnemyProperties>().Hp -= (dame * level);
             if (obj.gameObject.GetComponent<EnemyProperties>().Hp <= 0)
-            {
+            {                    
                 GameObject takedame = GameObject.FindGameObjectWithTag("Player");
+                takedame.GetComponent<PowerManage>().Count++;
+                int x = takedame.GetComponent<PowerManage>().Count;
+                Debug.Log("so quai da chet : " + x);
                 takedame.GetComponent<ManageLevel>().Exp += obj.gameObject.GetComponent<EnemyProperties>().Exp;
                 Destroy(obj.gameObject);
             }
