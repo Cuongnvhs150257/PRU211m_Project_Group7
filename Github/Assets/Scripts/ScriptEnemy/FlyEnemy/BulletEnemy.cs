@@ -50,11 +50,16 @@ public class BulletEnemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+
         GameObject obj = other.gameObject;
         if (other.gameObject.CompareTag("Player"))
         {
             GameObject takedame = GameObject.FindGameObjectWithTag("Player");
             takedame.GetComponent<Healthmanage>().healthAmount -= dame;
+            if (takedame.GetComponent<Healthmanage>().healthAmount <= 0)
+            {
+                MenuManager.GoToMenu(MenuName.End);
+            }
             Destroy(gameObject);
         }
     }

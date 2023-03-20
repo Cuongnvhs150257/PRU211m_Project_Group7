@@ -753,7 +753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3cabc23ada4f5b49ae677b9765d051e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 6960826559649814053, guid: 5ef955755bf8826458d6ebc8c9c096fb, type: 3}
+  enemy: {fileID: 3242991214747640848, guid: 5ef955755bf8826458d6ebc8c9c096fb, type: 3}
 --- !u!114 &667558836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -766,7 +766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e1afac221516964faf5a2599eedc2ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 8573140182069266072, guid: 6db60a45610b3274ba0d48e7e64d8791, type: 3}
+  enemy: {fileID: 4044126259067008516, guid: 6db60a45610b3274ba0d48e7e64d8791, type: 3}
 --- !u!1 &690151420
 GameObject:
   m_ObjectHideFlags: 0
@@ -1914,9 +1914,25 @@ PrefabInstance:
       propertyPath: joyStick
       value: 
       objectReference: {fileID: 209568274}
+    - target: {fileID: 7679533271235140095, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
+      propertyPath: m_Mass
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679533271465474508, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 3239039002999700207, guid: dec1e18ab4484474fa80591ba9e9558c, type: 3}
+    - target: {fileID: 7679533271465474510, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 9001151950475808025, guid: 59838e9873f2e2342a31bf1d6c82b706, type: 3}
     - target: {fileID: 7679533272451636097, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
       propertyPath: m_TagString
       value: gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679533272451636099, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7679533272451636100, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
       propertyPath: m_Enabled
@@ -1927,6 +1943,10 @@ PrefabInstance:
       value: gun
       objectReference: {fileID: 0}
     - target: {fileID: 7679533272562475715, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679533272562475716, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
