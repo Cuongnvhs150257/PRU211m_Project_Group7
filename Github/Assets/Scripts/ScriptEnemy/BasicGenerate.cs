@@ -21,7 +21,7 @@ public class BasicGenerate : MonoBehaviour
 
         //create and start timer
         spawnTimer = gameObject.AddComponent<Timer>();
-        spawnTimer.Duration = 2;
+        spawnTimer.Duration = 4;
         spawnTimer.Run();
     }
 
@@ -32,7 +32,7 @@ public class BasicGenerate : MonoBehaviour
         if (spawnTimer.Finished)
         {
             SpawnObject();
-            spawnTimer.Duration = 2;
+            spawnTimer.Duration = 4;
             spawnTimer.Run();
         }
     }

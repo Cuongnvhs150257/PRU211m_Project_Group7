@@ -422,7 +422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 10
   damage: 5
-  exp: 0
+  exp: 8
 --- !u!1 &7831298157686624624
 GameObject:
   m_ObjectHideFlags: 0

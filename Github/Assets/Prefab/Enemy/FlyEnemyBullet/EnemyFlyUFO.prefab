@@ -122,7 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 12
   damage: 5
-  exp: 3
+  exp: 7
 --- !u!58 &-128609956316725504
 CircleCollider2D:
   m_ObjectHideFlags: 0
