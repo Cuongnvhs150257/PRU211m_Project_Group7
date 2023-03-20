@@ -32,6 +32,10 @@ public class Healthmanage : MonoBehaviour
     void Update()
     {
         healBar.fillAmount = healthAmount / maxHealth;
+        if (healthAmount <= 0)
+        {
+            Time.timeScale = 0;
+        }
         healText.text = "HP: " + healthAmount.ToString() + "/" + maxHealth.ToString();
         if (Input.GetKeyDown(KeyCode.G))
         {
@@ -71,10 +75,8 @@ public class Healthmanage : MonoBehaviour
 
         healthAmount -= dame;
         
-        if (healthAmount <= 0)
-        {
-            Time.timeScale = 0;
-        }
+
+        
 
     }
     public void Heal(float healingAmount)
