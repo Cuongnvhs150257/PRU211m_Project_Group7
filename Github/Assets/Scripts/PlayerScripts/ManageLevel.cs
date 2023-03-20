@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ManageLevel : MonoBehaviour
 {
+    public Image expBar;
     public Text levelCount;
     public int exp=0;
     public int nextLv=10;
@@ -37,6 +38,7 @@ public class ManageLevel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        expBar.fillAmount =(float) exp / nextLv;
         if (exp >= nextLv)
         {
             int rs = exp - nextLv;//so du exp
