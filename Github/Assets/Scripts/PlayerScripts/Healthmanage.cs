@@ -31,7 +31,8 @@ public class Healthmanage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        healBar.fillAmount = healthAmount / maxHealth;
+        healText.text = "HP: " + healthAmount.ToString() + "/" + maxHealth.ToString();
         if (Input.GetKeyDown(KeyCode.G))
         {
             takeDamage(dame);
@@ -69,9 +70,7 @@ public class Healthmanage : MonoBehaviour
     {
 
         healthAmount -= dame;
-        healBar.fillAmount = healthAmount / maxHealth;
-        healText.text = "HP: " + healthAmount.ToString() + "/" + maxHealth.ToString();
-
+        
         if (healthAmount <= 0)
         {
             Time.timeScale = 0;
@@ -82,8 +81,7 @@ public class Healthmanage : MonoBehaviour
     {
         healthAmount += healingAmount;
         healthAmount = Mathf.Clamp(healthAmount, 0, maxHealth);
-        healBar.fillAmount = healthAmount / maxHealth;
-        healText.text = "HP: " + healthAmount.ToString() + "/" + maxHealth.ToString();
+        
     }
     public void OnCollisionEnter2D(Collision2D other)
     {
