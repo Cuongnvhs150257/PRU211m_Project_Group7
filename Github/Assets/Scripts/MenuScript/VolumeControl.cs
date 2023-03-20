@@ -40,7 +40,7 @@ public class VolumeControl : MonoBehaviour
     public void HandleBackButtonClickEvent()
     {
         Destroy(gameObject);
-        SceneManager.LoadScene("Menu");
+        MenuManager.GoToMenu(MenuName.Main);
     }
 
 

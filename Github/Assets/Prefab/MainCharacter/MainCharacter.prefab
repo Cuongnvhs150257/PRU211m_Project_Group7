@@ -199,6 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 742ca1b0dd981404ca35e1dd59a8b485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  expBar: {fileID: 0}
   levelCount: {fileID: 0}
   exp: 10
   nextLv: 45
@@ -217,6 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healBar: {fileID: 0}
   healthAmount: 100
+  maxHealth: 100
   shieldActivated: 0
   addHealth: 0
   dame: 10
@@ -235,6 +237,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MyscoreText: {fileID: 0}
+  deltaTime: 0
+  time: 0
 --- !u!114 &7679533271235139975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,7 +275,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7679533271465474497}
   - component: {fileID: 7679533272179395399}
-  - component: {fileID: 7679533271465474496}
   - component: {fileID: 7679533271465474511}
   - component: {fileID: 7679533271465474510}
   - component: {fileID: 7679533271465474509}
@@ -342,14 +345,6 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &7679533271465474496
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7679533271465474506}
-  m_Enabled: 1
 --- !u!114 &7679533271465474511
 MonoBehaviour:
   m_ObjectHideFlags: 0

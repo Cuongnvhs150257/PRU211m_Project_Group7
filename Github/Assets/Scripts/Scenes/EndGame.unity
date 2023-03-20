@@ -123,36 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &897648482 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3272781997427558531, guid: 7e76c93fd63fc894b91c8a0880450050, type: 3}
-  m_PrefabInstance: {fileID: 3272781995998983195}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &897648483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 897648482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8397fc12f7a0b1045bafd5e9958d4876, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeGame: {fileID: 1455469843}
-  levelGame: {fileID: 920788267}
---- !u!114 &920788267 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3272781995753744688, guid: 7e76c93fd63fc894b91c8a0880450050, type: 3}
-  m_PrefabInstance: {fileID: 3272781995998983195}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &937047057
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,17 +275,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1455469843 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3272781997362151688, guid: 7e76c93fd63fc894b91c8a0880450050, type: 3}
-  m_PrefabInstance: {fileID: 3272781995998983195}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3272781995998983195
 PrefabInstance:
   m_ObjectHideFlags: 0

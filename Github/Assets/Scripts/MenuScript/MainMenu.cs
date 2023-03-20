@@ -16,7 +16,12 @@ public class MainMenu : MonoBehaviour
     public void HandleAudioButtonClickEvent()
     {
         Destroy(gameObject);
-        SceneManager.LoadScene("VolumeMenu");
+        MenuManager.GoToMenu(MenuName.Volume);
+    }
+
+    public void HandleLoadButtonOnClickEvent()
+    {
+
     }
 
     public void HandleQuitButtonClickEvent()

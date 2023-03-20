@@ -32,4 +32,9 @@ public class PauseMenu : MonoBehaviour
     {
         SceneManager.LoadScene("VolumeMenu");
     }
+
+    public void HandleSaveButtonOnClickEvent()
+    {
+        
+    }
 }
