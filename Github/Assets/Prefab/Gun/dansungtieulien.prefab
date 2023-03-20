@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dame: 1
+  mainCharacter: {fileID: 7679533271235139972, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
 --- !u!58 &3647319086043404640
 CircleCollider2D:
   m_ObjectHideFlags: 0
