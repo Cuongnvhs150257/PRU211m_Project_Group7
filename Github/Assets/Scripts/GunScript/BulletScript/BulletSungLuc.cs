@@ -58,14 +58,14 @@ public class BulletSungLuc : MonoBehaviour
         if (other.gameObject.CompareTag("enemies"))
         {
             //tru di dame cua sung
-            obj.GetComponent<EnemyProperties>().Hp -= (dame * level);
+            GameObject mainCharacter = GameObject.FindGameObjectWithTag("Player");
+            int damage = mainCharacter.GetComponent<BaseDame>().BaseDamage;
+            obj.GetComponent<EnemyProperties>().Hp -= ((dame * level) + damage);
+            Debug.Log("Hp con "+obj.GetComponent<EnemyProperties>().Hp);
             if (obj.gameObject.GetComponent<EnemyProperties>().Hp <= 0)
-            {                    
-                GameObject takedame = GameObject.FindGameObjectWithTag("Player");
-                takedame.GetComponent<PowerManage>().Count++;
-                int x = takedame.GetComponent<PowerManage>().Count;
-                Debug.Log("so quai da chet : " + x);
-                takedame.GetComponent<ManageLevel>().Exp += obj.gameObject.GetComponent<EnemyProperties>().Exp;
+            {
+                mainCharacter.GetComponent<PowerManage>().Count++;
+                mainCharacter.GetComponent<ManageLevel>().Exp += obj.gameObject.GetComponent<EnemyProperties>().Exp;
                 Destroy(obj.gameObject);
             }
 
