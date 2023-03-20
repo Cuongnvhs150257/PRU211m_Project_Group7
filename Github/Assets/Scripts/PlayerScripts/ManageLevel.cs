@@ -33,6 +33,7 @@ public class ManageLevel : MonoBehaviour
     {
         level = 1;
         nextLv = 10;
+        expBar.fillAmount = 0;
     }
 
     // Update is called once per frame
@@ -45,7 +46,7 @@ public class ManageLevel : MonoBehaviour
             level++;
             nextLv += 5;
             exp = rs;
-            Debug.Log("Tang cap: " +level);
+            
             levelCount.text = level.ToString();
             GameObject mainCharacter = GameObject.FindGameObjectWithTag("Player");
             mainCharacter.GetComponent<Healthmanage>().maxHealth += 20;
@@ -56,7 +57,7 @@ public class ManageLevel : MonoBehaviour
         
 
         }
-        Debug.Log("Exp hien tai: " + exp+ " - Level: "+level);
+       
         
     }
 }
