@@ -749,6 +749,37 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 7679533272179395399, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
   m_PrefabInstance: {fileID: 7679533271893308216}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &667558827 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7679533271465474506, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
+  m_PrefabInstance: {fileID: 7679533271893308216}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &667558835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667558827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3cabc23ada4f5b49ae677b9765d051e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 6960826559649814053, guid: 5ef955755bf8826458d6ebc8c9c096fb, type: 3}
+--- !u!114 &667558836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667558827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e1afac221516964faf5a2599eedc2ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 8573140182069266072, guid: 6db60a45610b3274ba0d48e7e64d8791, type: 3}
 --- !u!1 &690151420
 GameObject:
   m_ObjectHideFlags: 0

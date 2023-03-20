@@ -12,6 +12,9 @@ public class GenerateCreep2 : MonoBehaviour
     Timer spawnTimer;
     [SerializeField]
     GameObject enemy;
+
+    private float timer;
+
     void Start()
     {
         minSpawnX = SpawnBorderSize;
@@ -29,11 +32,17 @@ public class GenerateCreep2 : MonoBehaviour
     void Update()
     {
 
-        if (spawnTimer.Finished)
+        timer += Time.deltaTime;
+
+        if (timer >= 30)
         {
-            SpawnObject();
-            spawnTimer.Duration = 7;
-            spawnTimer.Run();
+
+            if (spawnTimer.Finished)
+            {
+                SpawnObject();
+                spawnTimer.Duration = 7;
+                spawnTimer.Run();
+            }
         }
     }
 
