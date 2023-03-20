@@ -6,7 +6,9 @@ public class TimerMenu : MonoBehaviour
 {
     public Text MyscoreText;
 
-    float deltaTime;
+    public float deltaTime;
+
+    public int time;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +21,7 @@ public class TimerMenu : MonoBehaviour
     void Update()
     {
         deltaTime += Time.deltaTime;
-        int time=(int)deltaTime;
+        time=(int)deltaTime;
         MyscoreText.text = "00:" + time.ToString();
 
     }
