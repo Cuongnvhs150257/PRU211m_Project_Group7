@@ -17,6 +17,7 @@ public class PauseMenu : MonoBehaviour
     public void HandleResumeButtonOnClickEvent()
     {
         Time.timeScale = 1;
+        AudioListener.volume = 0.3f;
         Destroy(gameObject);
     }
 

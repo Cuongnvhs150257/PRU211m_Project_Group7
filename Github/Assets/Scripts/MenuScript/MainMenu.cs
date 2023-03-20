@@ -7,13 +7,15 @@ public class MainMenu : MonoBehaviour
 {
     public void HandlePlayButtonClickEvent()
     {
-        AudioListener.volume = 0.5f;
+        Destroy(gameObject);
+        AudioListener.volume = 0.3f;
         Time.timeScale = 1;
         SceneManager.LoadScene("GamePlay");
     }
 
     public void HandleAudioButtonClickEvent()
     {
+        Destroy(gameObject);
         SceneManager.LoadScene("VolumeMenu");
     }
 

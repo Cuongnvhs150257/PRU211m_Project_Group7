@@ -35,7 +35,9 @@ public class Healthmanage : MonoBehaviour
         healBar.fillAmount = healthAmount / maxHealth;
         if (healthAmount <= 0)
         {
+            Time.timeScale = 0;
             MenuManager.GoToMenu(MenuName.End);
+            
         }
         healText.text = "HP: " + healthAmount.ToString() + "/" + maxHealth.ToString();
         if (Input.GetKeyDown(KeyCode.G))
