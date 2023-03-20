@@ -421,6 +421,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 10
+  damage: 5
+  exp: 0
 --- !u!1 &7831298157686624624
 GameObject:
   m_ObjectHideFlags: 0

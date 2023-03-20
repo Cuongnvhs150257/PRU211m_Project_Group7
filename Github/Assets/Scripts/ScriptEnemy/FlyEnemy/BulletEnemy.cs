@@ -8,6 +8,25 @@ public class BulletEnemy : MonoBehaviour
     public float speed;
     Rigidbody2D bulletEB;
 
+
+    public int dame = 5;
+    //public int level;
+    bool upLevel2 = true;
+    bool upLevel3 = true;
+    public int Dame
+    {
+        get { return dame; }
+        set { dame = value; }
+    }
+    //public int Level
+    //{
+    //    get { return level; }
+    //    set { level = value; }
+    //}
+    // Start is called before the first frame update
+
+    private float timer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,5 +37,26 @@ public class BulletEnemy : MonoBehaviour
         Destroy(this.gameObject, 2);
     }
 
+
+    private void Update()
+    {
+        timer += Time.deltaTime;
+        if (timer > 2)
+        {
+            Destroy(gameObject);
+            timer = 0;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        GameObject obj = other.gameObject;
+        if (other.gameObject.CompareTag("Player"))
+        {
+            GameObject takedame = GameObject.FindGameObjectWithTag("Player");
+            takedame.GetComponent<Healthmanage>().healthAmount -= dame;
+            Destroy(gameObject);
+        }
+    }
 
 }

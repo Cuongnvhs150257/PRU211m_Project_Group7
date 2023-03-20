@@ -38,6 +38,5 @@ public class FlyEnemyFollow : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position,lineOfSite);
         Gizmos.DrawWireSphere(transform.position, shootingRange);
-
     }
 }

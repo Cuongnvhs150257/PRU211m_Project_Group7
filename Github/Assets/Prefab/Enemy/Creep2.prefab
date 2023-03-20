@@ -418,3 +418,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 9
+  damage: 2
+  exp: 0

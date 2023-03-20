@@ -30,6 +30,7 @@ public class Healthmanage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.G))
         {
             takeDamage(dame);

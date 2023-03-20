@@ -75,7 +75,6 @@ public class TieuLienScript : MonoBehaviour
                 currentDistance = objectDistance;
             }
         }
-
         return targetEnemy;
     }
 
