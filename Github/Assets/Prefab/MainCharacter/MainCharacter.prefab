@@ -200,9 +200,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelCount: {fileID: 0}
-  exp: 14
-  nextLv: 25
-  level: 5
+  exp: 10
+  nextLv: 45
+  level: 13
 --- !u!114 &7679533271235140089
 MonoBehaviour:
   m_ObjectHideFlags: 0

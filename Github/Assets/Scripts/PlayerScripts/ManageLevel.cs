@@ -43,9 +43,10 @@ public class ManageLevel : MonoBehaviour
             level++;
             nextLv += 5;
             exp = rs;
-            
-
+            Debug.Log("Tang cap: " +level);
+            levelCount.text = level.ToString();
         }
+        Debug.Log("Exp hien tai: " + exp+ " - Level: "+level);
         
     }
 }

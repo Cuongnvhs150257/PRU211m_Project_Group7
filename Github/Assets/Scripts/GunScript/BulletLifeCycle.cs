@@ -41,6 +41,8 @@ public class BulletLifeCycle : MonoBehaviour
             obj.GetComponent<EnemyProperties>().Hp -= dame;
             if (obj.gameObject.GetComponent<EnemyProperties>().Hp <= 0)
             {
+                GameObject takedame = GameObject.FindGameObjectWithTag("Player");
+                takedame.GetComponent<ManageLevel>().Exp += obj.gameObject.GetComponent<EnemyProperties>().Exp;
                 Destroy(obj.gameObject);
             }
 
