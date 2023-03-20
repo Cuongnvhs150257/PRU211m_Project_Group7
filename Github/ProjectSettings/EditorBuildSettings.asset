@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
+    path: Assets/Scripts/Scenes/Menu.unity
     guid: a7ab2484c33e64f44bba506cb0f8921f
   - enabled: 1
-    path: Assets/Scenes/GamePlay.unity
+    path: Assets/Scripts/Scenes/GamePlay.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 0
-    path: Assets/Scenes/PauseMenu.unity
+    path: Assets/Scripts/Scenes/PauseMenu.unity
     guid: 0f40ba7c4e16a9845a7224fda7365c73
   - enabled: 1
-    path: Assets/Scenes/VolumeMenu.unity
+    path: Assets/Scripts/Scenes/VolumeMenu.unity
     guid: 17095b216a180d14da6767eb5333cab7
   m_configObjects: {}

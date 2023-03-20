@@ -45,6 +45,16 @@ public class ManageLevel : MonoBehaviour
             exp = rs;
             Debug.Log("Tang cap: " +level);
             levelCount.text = level.ToString();
+            GameObject mainCharacter = GameObject.FindGameObjectWithTag("Player");
+            mainCharacter.GetComponent<Healthmanage>().maxHealth += 20;
+            mainCharacter.GetComponent<Healthmanage>().healthAmount = mainCharacter.GetComponent<Healthmanage>().maxHealth;
+            mainCharacter.GetComponent<Healthmanage>().healText.text = mainCharacter.GetComponent<Healthmanage>().healthAmount.ToString()
+                               + "/" + mainCharacter.GetComponent<Healthmanage>().maxHealth.ToString();
+
+
+            mainCharacter.GetComponent<Healthmanage>().healBar.fillAmount =
+                mainCharacter.GetComponent<Healthmanage>().healthAmount / mainCharacter.GetComponent<Healthmanage>().maxHealth;
+
         }
         Debug.Log("Exp hien tai: " + exp+ " - Level: "+level);
         
