@@ -33,10 +33,7 @@ public class Healthmanage : MonoBehaviour
     void Update()
     {
         healBar.fillAmount = healthAmount / maxHealth;
-        if (healthAmount <= 0)
-        {
-            MenuManager.GoToMenu(MenuName.End);
-        }
+       
         healText.text = "HP: " + healthAmount.ToString() + "/" + maxHealth.ToString();
         if (Input.GetKeyDown(KeyCode.G))
         {
@@ -73,11 +70,11 @@ public class Healthmanage : MonoBehaviour
     }
     public void takeDamage(float dame)
     {
-
         healthAmount -= dame;
-        
-
-        
+        if (healthAmount <= 0)
+        {
+            MenuManager.GoToMenu(MenuName.End);
+        }
 
     }
     public void Heal(float healingAmount)
@@ -89,8 +86,14 @@ public class Healthmanage : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("enemies"))
-        {
-            takeDamage(dame);
+        {   
+            EnemyProperties enemy = other.gameObject.GetComponent<EnemyProperties>();
+            if(enemy!= null)
+            {
+                int enemyDame = enemy.Damage;
+                takeDamage(enemyDame);               
+            }
+         
         }
         if (other.gameObject.CompareTag("testheal"))
         {

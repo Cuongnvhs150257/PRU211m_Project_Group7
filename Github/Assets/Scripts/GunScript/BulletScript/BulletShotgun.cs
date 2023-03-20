@@ -60,7 +60,10 @@ public class BulletShotgun : MonoBehaviour
             obj.GetComponent<EnemyProperties>().Hp -= (dame * level);
             if (obj.gameObject.GetComponent<EnemyProperties>().Hp <= 0)
             {
+                
+                
                 GameObject takedame = GameObject.FindGameObjectWithTag("Player");
+                takedame.GetComponent<PowerManage>().Count++;
                 takedame.GetComponent<ManageLevel>().Exp += obj.gameObject.GetComponent<EnemyProperties>().Exp;
                 Destroy(obj.gameObject);
             }

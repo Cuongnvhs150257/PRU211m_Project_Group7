@@ -8,6 +8,8 @@ public class BulletLifeCycle : MonoBehaviour
 
     [SerializeField]
     GameObject mainCharacter;
+
+    PowerManage powerManage;
     public int Dame
     {
         get { return dame; }
@@ -40,7 +42,8 @@ public class BulletLifeCycle : MonoBehaviour
             //tru di dame cua sung
             obj.GetComponent<EnemyProperties>().Hp -= dame;
             if (obj.gameObject.GetComponent<EnemyProperties>().Hp <= 0)
-            {
+            {               
+                
                 GameObject takedame = GameObject.FindGameObjectWithTag("Player");
                 takedame.GetComponent<ManageLevel>().Exp += obj.gameObject.GetComponent<EnemyProperties>().Exp;
                 Destroy(obj.gameObject);
