@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         Time.timeScale = 0;
+        AudioListener.volume = 0;
     }
 
 

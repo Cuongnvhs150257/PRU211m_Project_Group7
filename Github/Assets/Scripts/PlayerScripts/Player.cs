@@ -39,9 +39,11 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            MenuManager.GoToMenu(MenuName.Pause);
-        }
+        
+    }
+
+    public void HandlePauseButtonClick()
+    {
+          MenuManager.GoToMenu(MenuName.Pause);
     }
 }

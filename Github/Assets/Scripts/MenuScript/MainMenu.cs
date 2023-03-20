@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void HandlePlayButtonClickEvent()
     {
+        AudioListener.volume = 0.5f;
         Time.timeScale = 1;
         SceneManager.LoadScene("GamePlay");
     }
