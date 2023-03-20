@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 0;
     }
+
 
     // Update is called once per frame
     public void HandleResumeButtonOnClickEvent()
@@ -22,5 +24,10 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1;
         Destroy(gameObject);
         MenuManager.GoToMenu(MenuName.Main);
+    }
+
+    public void HandleVolumeButtonOnClickEvent()
+    {
+        SceneManager.LoadScene("VolumeMenu");
     }
 }

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1697407780982258596}
   - component: {fileID: 451905842106832349}
   - component: {fileID: -1694486254516891779}
-  - component: {fileID: 5410126449990937891}
   - component: {fileID: -1491370357140047437}
   - component: {fileID: 4312434809051119335}
+  - component: {fileID: -6528912429942339999}
   m_Layer: 0
   m_Name: danshotgun
   m_TagString: Untagged
@@ -109,19 +109,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5410126449990937891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1006410809667032803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25706f150427d7f459f0eb5ee8576f16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dame: 5
 --- !u!58 &-1491370357140047437
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -145,7 +132,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1006410809667032803}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: edb80c9dc89165540b070c5ddf1f1fc7, type: 3}
@@ -234,3 +221,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-6528912429942339999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1006410809667032803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20bfc2b386ed14d4281d3e475762b7fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dame: 5
+  level: 1

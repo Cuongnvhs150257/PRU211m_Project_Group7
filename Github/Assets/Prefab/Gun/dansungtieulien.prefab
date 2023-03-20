@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7436041684329222296}
   - component: {fileID: 4348052710867267571}
   - component: {fileID: 4290041487120092665}
-  - component: {fileID: 5161257476521399370}
   - component: {fileID: 3647319086043404640}
+  - component: {fileID: -3064273847878447973}
   m_Layer: 0
   m_Name: dansungtieulien
   m_TagString: Untagged
@@ -108,19 +108,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5161257476521399370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7501223957499516122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25706f150427d7f459f0eb5ee8576f16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dame: 1
 --- !u!58 &3647319086043404640
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -137,3 +124,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.3
+--- !u!114 &-3064273847878447973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7501223957499516122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e254c45564117a94fbf44c1c9d0165ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dame: 1
+  level: 1
