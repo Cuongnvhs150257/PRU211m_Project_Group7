@@ -7,10 +7,11 @@ using UnityEngine.UI;
 public class VolumeControl : MonoBehaviour
 {
     [SerializeField]
-    public Slider volumeSlider = null;
+    public Slider volumeSlider;
 
     [SerializeField]
-    public Text volumeText = null;
+    public Text volumeText;
+
 
     void Start()
     {
@@ -38,8 +39,10 @@ public class VolumeControl : MonoBehaviour
 
     public void HandleBackButtonClickEvent()
     {
+        Destroy(gameObject);
         SceneManager.LoadScene("Menu");
     }
+
 
 
 

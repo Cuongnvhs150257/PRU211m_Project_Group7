@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
+
         animator = GetComponent<Animator>();
     }
 
@@ -39,9 +41,11 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            MenuManager.GoToMenu(MenuName.Pause);
-        }
+        
+    }
+
+    public void HandlePauseButtonClick()
+    {
+          MenuManager.GoToMenu(MenuName.Pause);
     }
 }

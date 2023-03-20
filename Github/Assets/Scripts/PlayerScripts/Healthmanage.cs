@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Healthmanage : MonoBehaviour
 {
@@ -35,6 +36,8 @@ public class Healthmanage : MonoBehaviour
         if (healthAmount <= 0)
         {
             Time.timeScale = 0;
+            MenuManager.GoToMenu(MenuName.End);
+            
         }
         healText.text = "HP: " + healthAmount.ToString() + "/" + maxHealth.ToString();
         if (Input.GetKeyDown(KeyCode.G))

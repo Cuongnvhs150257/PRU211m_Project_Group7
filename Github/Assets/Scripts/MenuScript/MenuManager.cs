@@ -18,6 +18,9 @@ public static class MenuManager
             case MenuName.Volume:
                 Object.Instantiate(Resources.Load("Volume"));
                 break;
+            case MenuName.End:
+                Object.Instantiate(Resources.Load("End"));
+                break;
         }
     }
 }

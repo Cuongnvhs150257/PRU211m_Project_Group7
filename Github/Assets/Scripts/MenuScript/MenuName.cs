@@ -6,5 +6,6 @@ public enum MenuName
 {
     Main, 
     Pause,
-    Volume
+    Volume,
+    End
 }
