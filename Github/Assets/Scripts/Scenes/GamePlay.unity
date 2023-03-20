@@ -371,6 +371,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &92051919 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7679533271235139972, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
+  m_PrefabInstance: {fileID: 7679533271893308216}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &92051920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92051919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc2bba12f9ff83a448a2213daf575672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tieuLien: {fileID: 7679533271893308219}
+  shotgun: {fileID: 7679533271893308217}
+  sungLuc: {fileID: 7679533271893308218}
 --- !u!224 &209568273 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
@@ -1653,6 +1673,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: gun
       objectReference: {fileID: 0}
+    - target: {fileID: 7679533272752864981, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
 --- !u!1 &7679533271893308217 stripped
@@ -1682,7 +1706,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43bcc101360c64b4d913b13db7617025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
 --- !u!114 &7679533271893308221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1695,7 +1718,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43bcc101360c64b4d913b13db7617025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
 --- !u!114 &7679533271893308222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1708,4 +1730,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43bcc101360c64b4d913b13db7617025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
