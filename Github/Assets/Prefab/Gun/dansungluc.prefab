@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 483014966027025004}
   - component: {fileID: 9158500438808422952}
   - component: {fileID: -2471335809662210416}
-  - component: {fileID: 5171396257858071915}
   - component: {fileID: -8425236670418264691}
   - component: {fileID: 8288758424573509887}
+  - component: {fileID: -6837891441635895152}
   m_Layer: 0
   m_Name: dansungluc
   m_TagString: Untagged
@@ -109,20 +109,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5171396257858071915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7034118418158021010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25706f150427d7f459f0eb5ee8576f16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dame: 2
-  mainCharacter: {fileID: 7679533271235139972, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
 --- !u!58 &-8425236670418264691
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -235,3 +221,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-6837891441635895152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7034118418158021010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7576da4d0121fa40b7d2a3bbb3ba81f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dame: 2
+  level: 1
