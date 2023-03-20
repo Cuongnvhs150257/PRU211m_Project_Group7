@@ -43,7 +43,7 @@ public class PowerManage : MonoBehaviour
 
             }
         }
-        if (count == 3)
+        if (count == 5)
         {          
                 vongNo.SetActive(true);
                 isPower = true;                         
