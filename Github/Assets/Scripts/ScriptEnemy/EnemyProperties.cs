@@ -1,30 +1,51 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class EnemyProperties : MonoBehaviour
 {
     // Start is called before the first frame update
+    public Image healBar;
     public int hp;
     public int damage;
     public int exp;
 
+    public int maxHp;
+
     private float timer;
 
+    private void Start()
+    {
+        timer = 0;
+    }
 
     private void Update()
     {
+
+
         timer += Time.deltaTime;
 
         if (timer >= 60)
         {
-            hp++;
+            maxHp++;
             damage++;
             timer = 0;
-            //Debug.Log("Vua tang cap hp: " + hp);
-            //Debug.Log("Vua tang cap damage:  " + damage);
         }
 
+        healBar.fillAmount = (float)hp / maxHp;
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
+
+    }
+
+    public int MaxHp
+    {
+        get { return maxHp; }
+        set { maxHp = value; }
     }
     public int Hp
     {

@@ -9,6 +9,9 @@ TagManager:
   - enemies
   - testenemy
   - testheal
+  - gun
+  - BulletEnemyFly
+  - EnemyFly
   layers:
   - Default
   - TransparentFX
