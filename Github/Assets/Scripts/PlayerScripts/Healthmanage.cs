@@ -9,6 +9,7 @@ public class Healthmanage : MonoBehaviour
     public Image healBar;
     
     public float healthAmount = 100f;
+    public float maxHealth = 100f;
 
     public bool shieldActivated = false;
 
@@ -24,7 +25,7 @@ public class Healthmanage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        healText.text = "HP: " + healthAmount.ToString();
+        healText.text = "HP: " + healthAmount.ToString() + "/" + maxHealth.ToString();
     }
 
     // Update is called once per frame
@@ -67,8 +68,8 @@ public class Healthmanage : MonoBehaviour
     {
 
         healthAmount -= dame;
-        healBar.fillAmount = healthAmount / 100f;
-        healText.text = "HP: " + healthAmount.ToString();
+        healBar.fillAmount = healthAmount / maxHealth;
+        healText.text = "HP: " + healthAmount.ToString() + "/" + maxHealth.ToString();
 
         if (healthAmount <= 0)
         {
@@ -79,9 +80,9 @@ public class Healthmanage : MonoBehaviour
     public void Heal(float healingAmount)
     {
         healthAmount += healingAmount;
-        healthAmount = Mathf.Clamp(healthAmount, 0, 100);
-        healBar.fillAmount = healthAmount / 100;
-        healText.text = "HP: " + healthAmount.ToString();
+        healthAmount = Mathf.Clamp(healthAmount, 0, maxHealth);
+        healBar.fillAmount = healthAmount / maxHealth;
+        healText.text = "HP: " + healthAmount.ToString() + "/" + maxHealth.ToString();
     }
     public void OnCollisionEnter2D(Collision2D other)
     {
