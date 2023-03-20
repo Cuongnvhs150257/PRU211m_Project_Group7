@@ -51,9 +51,7 @@ public class ManageLevel : MonoBehaviour
             mainCharacter.GetComponent<Healthmanage>().healText.text = mainCharacter.GetComponent<Healthmanage>().healthAmount.ToString()
                                + "/" + mainCharacter.GetComponent<Healthmanage>().maxHealth.ToString();
 
-
-            mainCharacter.GetComponent<Healthmanage>().healBar.fillAmount =
-                mainCharacter.GetComponent<Healthmanage>().healthAmount / mainCharacter.GetComponent<Healthmanage>().maxHealth;
+        
 
         }
         Debug.Log("Exp hien tai: " + exp+ " - Level: "+level);
