@@ -21,7 +21,7 @@ public class GenerateCreep2 : MonoBehaviour
 
         //create and start timer
         spawnTimer = gameObject.AddComponent<Timer>();
-        spawnTimer.Duration = 3;
+        spawnTimer.Duration = 7;
         spawnTimer.Run();
     }
 
@@ -32,7 +32,7 @@ public class GenerateCreep2 : MonoBehaviour
         if (spawnTimer.Finished)
         {
             SpawnObject();
-            spawnTimer.Duration = 3;
+            spawnTimer.Duration = 7;
             spawnTimer.Run();
         }
     }
