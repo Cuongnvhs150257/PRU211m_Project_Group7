@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ManageLevel : MonoBehaviour
 {
+    public Image expBar;
     public Text levelCount;
     public int exp=0;
     public int nextLv=10;
@@ -32,18 +33,20 @@ public class ManageLevel : MonoBehaviour
     {
         level = 1;
         nextLv = 10;
+        expBar.fillAmount = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        expBar.fillAmount =(float) exp / nextLv;
         if (exp >= nextLv)
         {
             int rs = exp - nextLv;//so du exp
             level++;
             nextLv += 5;
             exp = rs;
-            Debug.Log("Tang cap: " +level);
+            
             levelCount.text = level.ToString();
             GameObject mainCharacter = GameObject.FindGameObjectWithTag("Player");
             mainCharacter.GetComponent<Healthmanage>().maxHealth += 20;
@@ -51,12 +54,10 @@ public class ManageLevel : MonoBehaviour
             mainCharacter.GetComponent<Healthmanage>().healText.text = mainCharacter.GetComponent<Healthmanage>().healthAmount.ToString()
                                + "/" + mainCharacter.GetComponent<Healthmanage>().maxHealth.ToString();
 
-
-            mainCharacter.GetComponent<Healthmanage>().healBar.fillAmount =
-                mainCharacter.GetComponent<Healthmanage>().healthAmount / mainCharacter.GetComponent<Healthmanage>().maxHealth;
+        
 
         }
-        Debug.Log("Exp hien tai: " + exp+ " - Level: "+level);
+       
         
     }
 }

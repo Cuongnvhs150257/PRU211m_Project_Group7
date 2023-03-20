@@ -21,7 +21,7 @@ public class FlyGenerate : MonoBehaviour
 
         //create and start timer
         spawnTimer = gameObject.AddComponent<Timer>();
-        spawnTimer.Duration = 1;
+        spawnTimer.Duration = 5;
         spawnTimer.Run();
     }
 
@@ -32,7 +32,7 @@ public class FlyGenerate : MonoBehaviour
         if (spawnTimer.Finished)
         {
             SpawnObject();
-            spawnTimer.Duration = 4;
+            spawnTimer.Duration = 5;
             spawnTimer.Run();
         }
     }
