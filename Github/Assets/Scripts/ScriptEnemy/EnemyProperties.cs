@@ -8,6 +8,24 @@ public class EnemyProperties : MonoBehaviour
     public int hp;
     public int damage;
     public int exp;
+
+    private float timer;
+
+
+    private void Update()
+    {
+        timer += Time.deltaTime;
+
+        if (timer >= 60)
+        {
+            hp++;
+            damage++;
+            timer = 0;
+            //Debug.Log("Vua tang cap hp: " + hp);
+            //Debug.Log("Vua tang cap damage:  " + damage);
+        }
+
+    }
     public int Hp
     {
         get { return hp; }
