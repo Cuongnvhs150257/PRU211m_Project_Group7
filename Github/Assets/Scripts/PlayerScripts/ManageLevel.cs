@@ -31,7 +31,15 @@ public class ManageLevel : MonoBehaviour
 
     void Start()
     {
-        level = 1;
+        int levelIndex = PlayerPrefs.GetInt("score");
+        if (levelIndex > 0) 
+        {
+            level = levelIndex;
+        }
+        else
+        {
+            level = 1;
+        }
         nextLv = 10;
         expBar.fillAmount = 0;
     }

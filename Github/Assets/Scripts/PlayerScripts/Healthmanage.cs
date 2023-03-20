@@ -26,6 +26,12 @@ public class Healthmanage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        float healthIndex = PlayerPrefs.GetFloat("health");
+        if(healthIndex > 0)
+        {
+            healthAmount = healthIndex;
+        }
+
         healText.text = "HP: " + healthAmount.ToString() + "/" + maxHealth.ToString();
     }
 

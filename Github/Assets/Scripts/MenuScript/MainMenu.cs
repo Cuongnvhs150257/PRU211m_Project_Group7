@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void HandlePlayButtonClickEvent()
     {
+        PlayerPrefs.DeleteAll();
         Destroy(gameObject);
         AudioListener.volume = 0.3f;
         Time.timeScale = 1;
@@ -21,11 +22,13 @@ public class MainMenu : MonoBehaviour
 
     public void HandleLoadButtonOnClickEvent()
     {
-
+        SceneManager.LoadScene("GamePlay");
+        
     }
 
     public void HandleQuitButtonClickEvent()
     {
+        PlayerPrefs.DeleteAll();
         Application.Quit();
     }
 }

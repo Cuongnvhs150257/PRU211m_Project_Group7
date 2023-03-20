@@ -13,7 +13,17 @@ public class TimerMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        MyscoreText.text = "00:00";
+        float timeIndex = PlayerPrefs.GetFloat("time");
+        if (timeIndex > 0)
+        {
+            deltaTime = timeIndex;
+            time = (int)deltaTime;
+            MyscoreText.text = "00:" + time.ToString();
+        }
+        else
+        {
+            MyscoreText.text = "00:00";
+        }
 
     }
 

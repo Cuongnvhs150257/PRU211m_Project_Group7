@@ -23,6 +23,7 @@ public class PauseMenu : MonoBehaviour
 
     public void HandleQuitButtonOnClickEvent()
     {
+        PlayerPrefs.DeleteAll();
         Time.timeScale = 1;
         Destroy(gameObject);
         MenuManager.GoToMenu(MenuName.Main);
@@ -35,6 +36,35 @@ public class PauseMenu : MonoBehaviour
 
     public void HandleSaveButtonOnClickEvent()
     {
-        
+        try
+        {
+            GameObject getSave = GameObject.FindGameObjectWithTag("Player");
+            int levelIndex = getSave.transform.GetComponent<ManageLevel>().level;
+            PlayerPrefs.SetInt("score", levelIndex);
+
+            float healthIndex = getSave.transform.GetComponent<Healthmanage>().healthAmount;
+            PlayerPrefs.SetFloat("health", healthIndex);
+
+            float timeIndex = getSave.transform.GetComponent<TimerMenu>().deltaTime;
+            PlayerPrefs.SetFloat("time", timeIndex);
+
+            float postionXIndex = getSave.transform.GetComponent<Player>().postion.x;
+            Debug.Log(postionXIndex);
+            PlayerPrefs.SetFloat("postionX", postionXIndex);
+
+            float postionYIndex = getSave.transform.GetComponent<Player>().postion.y;
+            PlayerPrefs.SetFloat("postionY", postionYIndex);
+
+            PlayerPrefs.Save();
+
+            Destroy(gameObject);
+            Time.timeScale = 0;
+            SceneManager.LoadScene("Menu");
+        }
+        catch (System.Exception)
+        {
+
+            Debug.Log("Save Loi");
+        }
     }
 }
