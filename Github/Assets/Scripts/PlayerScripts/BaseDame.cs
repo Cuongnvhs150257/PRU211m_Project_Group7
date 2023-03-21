@@ -23,12 +23,11 @@ public class BaseDame : MonoBehaviour
     void Start()
     {
         int basedameIndex = PlayerPrefs.GetInt("basedame");
-        if (basedameIndex > 0)
+        if (basedameIndex >= 0)
         {
             baseDamage = basedameIndex;
         }
 
-        baseDamage = 1;
         timer = 0;
         powerBaseDamge = 2 * baseDamage;
     }
@@ -40,9 +39,11 @@ public class BaseDame : MonoBehaviour
         if(timer >= 40)
         {
             baseDamage += 1;
+           
             powerBaseDamge = 2 * baseDamage;
             timer = 0;
             
         }
+        Debug.Log("Dame hien tai: " + baseDamage);
     }
 }

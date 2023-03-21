@@ -27,9 +27,10 @@ public class EnemyProperties : MonoBehaviour
 
         timer += Time.deltaTime;
 
-        if (timer >= 60)
+        if (timer >= 40)
         {
-            maxHp++;
+            hp += 30;
+            maxHp+=30;
             damage++;
             timer = 0;
         }

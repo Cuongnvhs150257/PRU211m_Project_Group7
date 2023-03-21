@@ -11,19 +11,11 @@ public class BulletEnemy : MonoBehaviour
     public bool Friezel;
 
     public int dame = 5;
-    //public int level;
-    bool upLevel2 = true;
-    bool upLevel3 = true;
     public int Dame
     {
         get { return dame; }
         set { dame = value; }
     }
-    //public int Level
-    //{
-    //    get { return level; }
-    //    set { level = value; }
-    //}
     // Start is called before the first frame update
 
     private float timer;

@@ -9,7 +9,7 @@ public class ShotgunScript : MonoBehaviour
     public Transform mainCharacter;
     public Transform nongsung;
     private float timer;
-    private float timeBetweenFire=2f;
+    private float timeBetweenFire = 2f;
     private Rigidbody2D rb;
     Vector2 spawnLocation = Vector2.zero;
     private float yPositionForRotate = 0.2188364f;
@@ -19,7 +19,7 @@ public class ShotgunScript : MonoBehaviour
     float distanceWorking = 4.5f;
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
