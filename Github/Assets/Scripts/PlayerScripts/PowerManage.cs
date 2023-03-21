@@ -30,7 +30,10 @@ public class PowerManage : MonoBehaviour
         {
             GameObject takedame = GameObject.FindGameObjectWithTag("Player");
             //takedame.GetComponent<JoyStickMove>().velociad += 1;
-            takedame.GetComponent<BaseDame>().BaseDamage *= 2;
+            
+            takedame.GetComponent<BaseDame>().BaseDamage = takedame.GetComponent<BaseDame>().PowerBaseDamage;
+            int x = takedame.GetComponent<BaseDame>().BaseDamage;
+            Debug.Log("Tang BaseDame: " + x);
             timer += Time.deltaTime;
             if (timer >= 10)
             {
@@ -40,6 +43,9 @@ public class PowerManage : MonoBehaviour
                 vongNo.SetActive(false);
                 //takedame.GetComponent<JoyStickMove>().velociad -= 2;
                 takedame.GetComponent<BaseDame>().BaseDamage /= 2;
+                int y = takedame.GetComponent<BaseDame>().BaseDamage;
+                Debug.Log("Giam BaseDame: " + y);
+
 
             }
         }
