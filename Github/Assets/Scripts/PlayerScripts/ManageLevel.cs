@@ -34,6 +34,7 @@ public class ManageLevel : MonoBehaviour
         int levelIndex = PlayerPrefs.GetInt("score");
         if (levelIndex > 0) 
         {
+            Debug.Log(levelIndex);
             level = levelIndex;
         }
         else

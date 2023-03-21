@@ -30,13 +30,13 @@ public class Creep4FollowPlayer : MonoBehaviour
             if (timer >= 3)
             {
                 Friezel = false;
-                speed = 0.5f;
+                speed = 2.3f;
                 timer = 0;
             }
         }
         else
         {
-            speed = 0.9f;
+            speed = 2.3f;
         }
 
         if (Vector2.Distance(transform.position, target.position) > 1)

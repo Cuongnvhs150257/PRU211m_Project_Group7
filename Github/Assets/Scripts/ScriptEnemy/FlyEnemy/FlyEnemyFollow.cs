@@ -12,6 +12,8 @@ public class FlyEnemyFollow : MonoBehaviour
     public GameObject bullet;
     public GameObject bulletParent;
     private Transform player;
+    public bool Friezel;
+    float timer;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,22 @@ public class FlyEnemyFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Friezel)
+        {
+            speed = 0;
+            timer += Time.deltaTime;
+            if (timer >= 3)
+            {
+                Friezel = false;
+                speed = 1.9f;
+                timer = 0;
+            }
+        }
+        else
+        {
+            speed = 1.9f;
+        }
+
         float distanceFromPlayer = Vector2.Distance(player.position, transform.position);
       if (distanceFromPlayer < lineOfSite && distanceFromPlayer > shootingRange)
         {

@@ -39,6 +39,18 @@ public class PowerBuff : ItemEffect
                 {
                     listEnemy[i].transform.GetComponent<BasicFollow>().Friezel = true;
                 }
+                if (listEnemy[i].transform.GetComponent<Creep2FollowPlayer>() != null)
+                {
+                    listEnemy[i].transform.GetComponent<Creep2FollowPlayer>().Friezel = true;
+                }
+                if (listEnemy[i].transform.GetComponent<Creep4FollowPlayer>() != null)
+                {
+                    listEnemy[i].transform.GetComponent<Creep4FollowPlayer>().Friezel = true;
+                }
+                if (listEnemy[i].transform.GetComponent<FlyEnemyFollow>() != null)
+                {
+                    listEnemy[i].transform.GetComponent<FlyEnemyFollow>().Friezel = true;
+                }
             }
 
         }
