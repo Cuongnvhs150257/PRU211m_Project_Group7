@@ -27,9 +27,11 @@ public class Healthmanage : MonoBehaviour
     void Start()
     {
         float healthIndex = PlayerPrefs.GetFloat("health");
+        float maxhealthIndex = PlayerPrefs.GetFloat("maxhealth");
         if(healthIndex > 0)
         {
             healthAmount = healthIndex;
+            maxHealth = maxhealthIndex;
         }
 
         healText.text = "HP: " + healthAmount.ToString() + "/" + maxHealth.ToString();

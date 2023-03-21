@@ -18,11 +18,11 @@ public class GunManage : MonoBehaviour
     void Update()
     {
         GameObject mainCharacter=GameObject.FindGameObjectWithTag("Player");
-        if(mainCharacter.GetComponent<ManageLevel>().Level == 5)
+        if(mainCharacter.GetComponent<ManageLevel>().Level >= 5)
         {
             tieuLien.SetActive(true);
         }
-        if (mainCharacter.GetComponent<ManageLevel>().Level == 15)
+        if (mainCharacter.GetComponent<ManageLevel>().Level >= 15)
         {
             shotgun.SetActive(true);
         }

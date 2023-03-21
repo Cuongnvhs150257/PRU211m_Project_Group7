@@ -51,6 +51,10 @@ public class PowerBuff : ItemEffect
                 {
                     listEnemy[i].transform.GetComponent<FlyEnemyFollow>().Friezel = true;
                 }
+                if (listEnemy[i].transform.GetComponent<BulletEnemy>() != null)
+                {
+                    listEnemy[i].transform.GetComponent<FlyEnemyFollow>().Friezel = true;
+                }
             }
 
         }
