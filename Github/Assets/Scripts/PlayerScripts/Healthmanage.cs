@@ -91,21 +91,61 @@ public class Healthmanage : MonoBehaviour
         healthAmount = Mathf.Clamp(healthAmount, 0, maxHealth);
         
     }
+   
+    
+
+
+    ////////////////
+    public int attack = 10;
+    public float attackSpeed = 1f;
+    public bool isAttacking = false;
+
     public void OnCollisionEnter2D(Collision2D other)
-    {
+    {   
+        isAttacking = true;
         if (other.gameObject.CompareTag("enemies"))
-        {   
-            EnemyProperties enemy = other.gameObject.GetComponent<EnemyProperties>();
-            if(enemy!= null)
+        {
+            if (isAttacking)
             {
-                int enemyDame = enemy.Damage;
-                takeDamage(enemyDame);               
+                EnemyProperties enemy = other.gameObject.GetComponent<EnemyProperties>();
+                if (enemy != null)
+                {
+                    int enemyDame = enemy.Damage;
+                    StartCoroutine(AttackPlayer(other.gameObject));
+                }
             }
-         
+
         }
         if (other.gameObject.CompareTag("testheal"))
         {
             Heal(10);
         }
+    }
+
+
+
+
+    public IEnumerator AttackPlayer(GameObject enemy)
+    {
+        isAttacking = true;
+        while (true)
+        {
+            int enemyDamage = enemy.GetComponent<EnemyProperties>().Damage;
+            takeDamage(enemyDamage);
+            yield return new WaitForSeconds(attackSpeed);
+
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("enemies"))
+        {
+            
+                // N?u ng??i ch?i r?i kh?i vùng va ch?m, d?ng tr? máu
+                StopCoroutine(AttackPlayer(other.gameObject));
+                isAttacking = false;
+        }
+
     }
 }

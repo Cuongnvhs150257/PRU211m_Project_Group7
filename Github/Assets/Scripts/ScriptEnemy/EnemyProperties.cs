@@ -19,7 +19,7 @@ public class EnemyProperties : MonoBehaviour
     private void Start()
     {
         timer = 0;
-        StartCoroutine(AttackPlayer());
+        //StartCoroutine(AttackPlayer());
     }
 
     private void Update()
@@ -29,7 +29,7 @@ public class EnemyProperties : MonoBehaviour
         if (timer >= 40)
         {
             hp += 30;
-            maxHp+=30;
+            maxHp += 30;
             damage++;
             timer = 0;
         }
@@ -69,16 +69,29 @@ public class EnemyProperties : MonoBehaviour
     // try fix enemies attack Player
     public int attack = 10;
     public float attackSpeed = 1f;
-
-    private IEnumerator AttackPlayer()
+    public bool isAttacking = false;
+    public IEnumerator AttackPlayer(GameObject player)
     {
+        isAttacking = true;
         while (true)
         {
-            yield return new WaitForSeconds(attackSpeed);
-            GameObject player = GameObject.FindWithTag("Player");
             player.GetComponent<Healthmanage>().takeDamage(Damage);
-            Debug.Log("Quái v?t t?n công ng??i ch?i và tr? " + attack + " ?i?m máu");
+            yield return new WaitForSeconds(attackSpeed);
+
         }
     }
 
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (!isAttacking)
+            {
+                // N?u ng??i ch?i r?i kh?i vùng va ch?m, d?ng tr? máu
+                StopCoroutine(AttackPlayer(other.gameObject));
+                isAttacking = false;
+            }
+        }
+
+    }
 }
