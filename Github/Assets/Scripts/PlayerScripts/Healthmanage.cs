@@ -8,7 +8,7 @@ public class Healthmanage : MonoBehaviour
 {
     // Start is called before the first frame update
     public Image healBar;
-    
+
     public float healthAmount = 30f;
     public float maxHealth = 30f;
 
@@ -28,7 +28,7 @@ public class Healthmanage : MonoBehaviour
     {
         float healthIndex = PlayerPrefs.GetFloat("health");
         float maxhealthIndex = PlayerPrefs.GetFloat("maxhealth");
-        if(healthIndex > 0)
+        if (healthIndex > 0)
         {
             healthAmount = healthIndex;
             maxHealth = maxhealthIndex;
@@ -41,7 +41,7 @@ public class Healthmanage : MonoBehaviour
     void Update()
     {
         healBar.fillAmount = healthAmount / maxHealth;
-       
+
         healText.text = "HP: " + healthAmount.ToString() + "/" + maxHealth.ToString();
         if (Input.GetKeyDown(KeyCode.G))
         {
@@ -89,10 +89,10 @@ public class Healthmanage : MonoBehaviour
     {
         healthAmount += healingAmount;
         healthAmount = Mathf.Clamp(healthAmount, 0, maxHealth);
-        
+
     }
-   
-    
+
+
 
 
     ////////////////
@@ -101,7 +101,7 @@ public class Healthmanage : MonoBehaviour
     public bool isAttacking = false;
 
     public void OnCollisionEnter2D(Collision2D other)
-    {   
+    {
         isAttacking = true;
         if (other.gameObject.CompareTag("enemies"))
         {
@@ -114,6 +114,7 @@ public class Healthmanage : MonoBehaviour
                     StartCoroutine(AttackPlayer(other.gameObject));
                 }
             }
+            
 
         }
         if (other.gameObject.CompareTag("testheal"))
@@ -127,25 +128,29 @@ public class Healthmanage : MonoBehaviour
 
     public IEnumerator AttackPlayer(GameObject enemy)
     {
-        isAttacking = true;
-        while (true)
+
+        do
         {
             int enemyDamage = enemy.GetComponent<EnemyProperties>().Damage;
             takeDamage(enemyDamage);
             yield return new WaitForSeconds(attackSpeed);
 
         }
+        while (isAttacking == true);
+
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    public void OnCollisionExit2D(Collision2D other)
     {
-        if (other.CompareTag("enemies"))
+        if (other.gameObject.CompareTag("enemies"))
         {
-            
-                // N?u ng??i ch?i r?i kh?i vùng va ch?m, d?ng tr? máu
-                StopCoroutine(AttackPlayer(other.gameObject));
-                isAttacking = false;
-        }
+            // N?u ng??i ch?i r?i kh?i vùng va ch?m, d?ng tr? máu
+            StopCoroutine(AttackPlayer(other.gameObject));
+            isAttacking = false;
 
+        }
     }
+   
+
 }
+
