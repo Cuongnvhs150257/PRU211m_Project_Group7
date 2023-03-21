@@ -26,12 +26,17 @@ public class GenerateCreep2 : MonoBehaviour
         spawnTimer = gameObject.AddComponent<Timer>();
         spawnTimer.Duration = 7;
         spawnTimer.Run();
+
+        float timeIndex = PlayerPrefs.GetFloat("time");
+        if (timeIndex > 0)
+        {
+            timer = timeIndex;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-
         timer += Time.deltaTime;
 
         if (timer >= 30)

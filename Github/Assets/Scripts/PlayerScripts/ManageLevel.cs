@@ -9,7 +9,7 @@ public class ManageLevel : MonoBehaviour
     public Text levelCount;
     public int exp=0;
     public int nextLv=10;
-    public int level=1;
+    public int level;
 
     public int Exp
     {
@@ -34,7 +34,9 @@ public class ManageLevel : MonoBehaviour
         int levelIndex = PlayerPrefs.GetInt("score");
         if (levelIndex > 0) 
         {
+            Debug.Log(levelIndex);
             level = levelIndex;
+            levelCount.text = levelIndex.ToString();
         }
         else
         {

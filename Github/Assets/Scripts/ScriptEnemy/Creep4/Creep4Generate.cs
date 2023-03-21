@@ -26,6 +26,12 @@ public class Creep4Generate : MonoBehaviour
         spawnTimer = gameObject.AddComponent<Timer>();
         spawnTimer.Duration = 10;
         spawnTimer.Run();
+
+        float timeIndex = PlayerPrefs.GetFloat("time");
+        if (timeIndex > 0)
+        {
+            timer = timeIndex;
+        }
     }
 
     // Update is called once per frame

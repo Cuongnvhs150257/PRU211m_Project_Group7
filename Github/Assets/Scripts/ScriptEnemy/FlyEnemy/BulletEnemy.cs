@@ -8,6 +8,7 @@ public class BulletEnemy : MonoBehaviour
     public float speed;
     Rigidbody2D bulletEB;
 
+    public bool Friezel;
 
     public int dame = 5;
     //public int level;
@@ -30,6 +31,22 @@ public class BulletEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (Friezel)
+        {
+            speed = 0;
+            timer += Time.deltaTime;
+            if (timer >= 3)
+            {
+                Friezel = false;
+                speed = 10;
+                timer = 0;
+            }
+        }
+        else
+        {
+            speed = 10;
+        }
+
         bulletEB = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player");
         Vector2 moveDir = (target.transform.position - transform.position).normalized * speed;

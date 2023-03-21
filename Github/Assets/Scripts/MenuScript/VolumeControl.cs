@@ -48,6 +48,7 @@ public class VolumeControl : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            
         }
 
 

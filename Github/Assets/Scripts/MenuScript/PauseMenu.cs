@@ -9,7 +9,6 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         Time.timeScale = 0;
-        AudioListener.volume = 0;
     }
 
 
@@ -17,7 +16,6 @@ public class PauseMenu : MonoBehaviour
     public void HandleResumeButtonOnClickEvent()
     {
         Time.timeScale = 1;
-        AudioListener.volume = 0.3f;
         Destroy(gameObject);
     }
 
@@ -38,11 +36,17 @@ public class PauseMenu : MonoBehaviour
         try
         {
             GameObject getSave = GameObject.FindGameObjectWithTag("Player");
-            int levelIndex = getSave.transform.GetComponent<ManageLevel>().level;
+            int levelIndex = getSave.transform.GetComponent<ManageLevel>().Level;
             PlayerPrefs.SetInt("score", levelIndex);
 
             float healthIndex = getSave.transform.GetComponent<Healthmanage>().healthAmount;
             PlayerPrefs.SetFloat("health", healthIndex);
+
+            float maxhealthIndex = getSave.transform.GetComponent<Healthmanage>().maxHealth;
+            PlayerPrefs.SetFloat("maxhealth", maxhealthIndex);
+
+            int basedameIndex = getSave.transform.GetComponent<BaseDame>().BaseDamage;
+            PlayerPrefs.SetInt("basedame", basedameIndex);
 
             float timeIndex = getSave.transform.GetComponent<TimerMenu>().deltaTime;
             PlayerPrefs.SetFloat("time", timeIndex);
