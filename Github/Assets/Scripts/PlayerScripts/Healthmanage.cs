@@ -9,8 +9,8 @@ public class Healthmanage : MonoBehaviour
     // Start is called before the first frame update
     public Image healBar;
     
-    public float healthAmount = 100f;
-    public float maxHealth = 100f;
+    public float healthAmount = 30f;
+    public float maxHealth = 30f;
 
     public bool shieldActivated = false;
 
