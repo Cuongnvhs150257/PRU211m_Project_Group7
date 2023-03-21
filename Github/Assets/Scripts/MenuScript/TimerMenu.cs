@@ -17,8 +17,10 @@ public class TimerMenu : MonoBehaviour
         if (timeIndex > 0)
         {
             deltaTime = timeIndex;
-            time = (int)deltaTime;
-            MyscoreText.text = "00:" + time.ToString();
+            int minutes = Mathf.FloorToInt(deltaTime / 60f);
+            int seconds = Mathf.FloorToInt(deltaTime % 60f);
+            string formattedTime = minutes.ToString("00") + ":" + seconds.ToString("00");
+            MyscoreText.text = formattedTime;
         }
         else
         {
@@ -31,8 +33,11 @@ public class TimerMenu : MonoBehaviour
     void Update()
     {
         deltaTime += Time.deltaTime;
-        time=(int)deltaTime;
-        MyscoreText.text = "00:" + time.ToString();
+        int minutes = Mathf.FloorToInt(deltaTime / 60f);
+        int seconds = Mathf.FloorToInt(deltaTime % 60f);
+        string formattedTime = minutes.ToString("00") + ":" + seconds.ToString("00");
+
+        MyscoreText.text = formattedTime;
 
     }
 }

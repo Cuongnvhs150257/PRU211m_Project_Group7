@@ -12,6 +12,7 @@ TagManager:
   - gun
   - BulletEnemyFly
   - EnemyFly
+  - mainmenu
   layers:
   - Default
   - TransparentFX

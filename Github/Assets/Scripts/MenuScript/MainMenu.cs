@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    public Button loadButton;
+
     public void HandlePlayButtonClickEvent()
     {
         PlayerPrefs.DeleteAll();
@@ -16,13 +19,23 @@ public class MainMenu : MonoBehaviour
 
     public void HandleAudioButtonClickEvent()
     {
+        PlayerPrefs.SetInt("audioback", 1);
+
         Destroy(gameObject);
         MenuManager.GoToMenu(MenuName.Volume);
     }
 
     public void HandleLoadButtonOnClickEvent()
     {
-        SceneManager.LoadScene("GamePlay");
+        if (PlayerPrefs.HasKey("score"))
+        {
+            SceneManager.LoadScene("GamePlay");
+        }
+        else
+        {
+            loadButton.interactable = false;
+        }
+        
         
     }
 

@@ -39,8 +39,18 @@ public class VolumeControl : MonoBehaviour
 
     public void HandleBackButtonClickEvent()
     {
-        Destroy(gameObject);
-        MenuManager.GoToMenu(MenuName.Main);
+        
+
+        if (PlayerPrefs.GetInt("audioback") == 1)
+        {
+            MenuManager.GoToMenu(MenuName.Main);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+
     }
 
 

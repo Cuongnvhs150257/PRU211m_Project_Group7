@@ -23,7 +23,6 @@ public class PauseMenu : MonoBehaviour
 
     public void HandleQuitButtonOnClickEvent()
     {
-        PlayerPrefs.DeleteAll();
         Time.timeScale = 1;
         Destroy(gameObject);
         MenuManager.GoToMenu(MenuName.Main);
@@ -31,7 +30,7 @@ public class PauseMenu : MonoBehaviour
 
     public void HandleVolumeButtonOnClickEvent()
     {
-        SceneManager.LoadScene("VolumeMenu");
+        MenuManager.GoToMenu(MenuName.Volume);
     }
 
     public void HandleSaveButtonOnClickEvent()
@@ -49,17 +48,17 @@ public class PauseMenu : MonoBehaviour
             PlayerPrefs.SetFloat("time", timeIndex);
 
             float postionXIndex = getSave.transform.GetComponent<Player>().postion.x;
-            Debug.Log(postionXIndex);
+           
             PlayerPrefs.SetFloat("postionX", postionXIndex);
 
             float postionYIndex = getSave.transform.GetComponent<Player>().postion.y;
+
             PlayerPrefs.SetFloat("postionY", postionYIndex);
 
             PlayerPrefs.Save();
 
+            Time.timeScale = 1;
             Destroy(gameObject);
-            Time.timeScale = 0;
-            SceneManager.LoadScene("Menu");
         }
         catch (System.Exception)
         {

@@ -23,11 +23,13 @@ public class Player : MonoBehaviour
 
         float postionXIndex = PlayerPrefs.GetFloat("postionX");
         float postionYIndex = PlayerPrefs.GetFloat("postionY");
+        Debug.Log(postionXIndex);
 
-        if(postionXIndex > 0 && postionYIndex > 0)
+        if(postionXIndex !=null && postionYIndex != null)
         {
-            Debug.Log(postionXIndex);
-            transform.position = new Vector3(postionXIndex, postionYIndex, 0);
+            Vector3 loadedPosition = new Vector3(postionXIndex, postionYIndex, 0);
+
+            transform.position = loadedPosition;
         }
     }
 
