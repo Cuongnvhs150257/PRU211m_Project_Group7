@@ -67,31 +67,40 @@ public class EnemyProperties : MonoBehaviour
 
 
     // try fix enemies attack Player
-    //public int attack = 10;
-    //public float attackSpeed = 1f;
-    //public bool isAttacking = false;
-    //public IEnumerator AttackPlayer(GameObject player)
-    //{
-    //    isAttacking = true;
-    //    while (true)
-    //    {
-    //        player.GetComponent<Healthmanage>().takeDamage(Damage);
-    //        yield return new WaitForSeconds(attackSpeed);
+    public int attack = 10;
+    public float attackSpeed = 1f;
+    public bool isAttacking = false;
 
-    //    }
-    //}
+    public void OnCollisionEnter2D(Collision2D other)
+    {
+        isAttacking = true;
+        if (other.gameObject.CompareTag("Player"))
+        {
 
-    //private void OnTriggerExit2D(Collider2D other)
-    //{
-    //    if (other.CompareTag("Player"))
-    //    {
-    //        if (!isAttacking)
-    //        {
-    //            // N?u ng??i ch?i r?i kh?i vùng va ch?m, d?ng tr? máu
-    //            StopCoroutine(AttackPlayer(other.gameObject));
-    //            isAttacking = false;
-    //        }
-    //    }
+            StartCoroutine(AttackPlayer(other.gameObject));
+        }
+    }
 
-    //}
+
+    public IEnumerator AttackPlayer(GameObject player)
+    {
+        while (isAttacking == true)
+        {
+            player.GetComponent<Healthmanage>().takeDamage(Damage);
+            yield return new WaitForSeconds(attackSpeed);
+
+        }
+    }
+
+    public void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            // ng choi ra khoi vung va cham thi ngung tru mau
+            StopCoroutine(AttackPlayer(other.gameObject));
+            isAttacking = false;
+
+        }
+    }
+
 }
