@@ -17,7 +17,7 @@ public class EndMenu : MonoBehaviour
         AudioListener.volume = 0.2f;
 
         GameObject getScore = GameObject.FindGameObjectWithTag("Player");
-        timeGame.text = "Survival time: " + getScore.transform.GetComponent<TimerMenu>().time.ToString();
+        timeGame.text = "Survival time: " + getScore.transform.GetComponent<TimerMenu>().formattedTime;
 
         levelGame.text = "Your Level: " + getScore.transform.GetComponent<ManageLevel>().level.ToString();
     }
@@ -27,5 +27,11 @@ public class EndMenu : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene("GamePlay");
         Destroy(gameObject);
+    }
+
+    public void HandleQuitButtonOnClickEvent()
+    {
+        Destroy(gameObject);
+        MenuManager.GoToMenu(MenuName.Main);
     }
 }

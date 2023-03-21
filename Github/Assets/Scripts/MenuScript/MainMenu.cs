@@ -12,14 +12,15 @@ public class MainMenu : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         Destroy(gameObject);
-        AudioListener.volume = 0.3f;
         Time.timeScale = 1;
+        AudioListener.volume = 0.3f;
         SceneManager.LoadScene("GamePlay");
     }
 
     public void HandleAudioButtonClickEvent()
     {
         PlayerPrefs.SetInt("audioback", 1);
+        PlayerPrefs.SetInt("audioOn", 1);
 
         Destroy(gameObject);
         MenuManager.GoToMenu(MenuName.Volume);
@@ -27,6 +28,7 @@ public class MainMenu : MonoBehaviour
 
     public void HandleLoadButtonOnClickEvent()
     {
+        AudioListener.volume = 0.3f;
         if (PlayerPrefs.HasKey("score"))
         {
             SceneManager.LoadScene("GamePlay");

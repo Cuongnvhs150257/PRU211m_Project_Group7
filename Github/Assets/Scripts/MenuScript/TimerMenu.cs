@@ -8,7 +8,7 @@ public class TimerMenu : MonoBehaviour
 
     public float deltaTime;
 
-    public int time;
+    public string formattedTime;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,7 @@ public class TimerMenu : MonoBehaviour
             deltaTime = timeIndex;
             int minutes = Mathf.FloorToInt(deltaTime / 60f);
             int seconds = Mathf.FloorToInt(deltaTime % 60f);
-            string formattedTime = minutes.ToString("00") + ":" + seconds.ToString("00");
+            formattedTime = minutes.ToString("00") + ":" + seconds.ToString("00");
             MyscoreText.text = formattedTime;
         }
         else
@@ -35,7 +35,7 @@ public class TimerMenu : MonoBehaviour
         deltaTime += Time.deltaTime;
         int minutes = Mathf.FloorToInt(deltaTime / 60f);
         int seconds = Mathf.FloorToInt(deltaTime % 60f);
-        string formattedTime = minutes.ToString("00") + ":" + seconds.ToString("00");
+        formattedTime = minutes.ToString("00") + ":" + seconds.ToString("00");
 
         MyscoreText.text = formattedTime;
 

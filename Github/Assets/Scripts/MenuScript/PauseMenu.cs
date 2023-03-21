@@ -21,6 +21,7 @@ public class PauseMenu : MonoBehaviour
 
     public void HandleQuitButtonOnClickEvent()
     {
+        PlayerPrefs.SetInt("audioOn", 1);
         Time.timeScale = 1;
         Destroy(gameObject);
         MenuManager.GoToMenu(MenuName.Main);

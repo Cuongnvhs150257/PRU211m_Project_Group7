@@ -592,7 +592,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac6f6c040098104a8427a1c9918fa71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLoad: 0
   loadButton: {fileID: 382492851}
 --- !u!1 &382492849
 GameObject:
@@ -1142,6 +1141,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1573026278}
   - component: {fileID: 1573026277}
+  - component: {fileID: 1573026279}
   m_Layer: 0
   m_Name: MenuAudio
   m_TagString: Untagged
@@ -1260,6 +1260,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1573026279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573026276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51721a17c3f98c1459f1a99b687996a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MyAudioSource: {fileID: 1573026277}
 --- !u!1 &1654612923
 GameObject:
   m_ObjectHideFlags: 0
