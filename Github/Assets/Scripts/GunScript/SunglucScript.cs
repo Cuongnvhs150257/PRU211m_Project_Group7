@@ -16,7 +16,23 @@ public class SunglucScript : MonoBehaviour
     private float xPosiotionForRotate = 0.1701825f;
     public AudioSource sungLucSound;
     float distanceWorking = 7f;
-    // Start is called before the first frame update
+
+    //for bullet
+    public int dame;//default 2
+    public int level;
+    bool upLevel2 = true;
+    bool upLevel3 = true;
+    public int Dame
+    {
+        get { return dame; }
+        set { dame = value; }
+    }
+    public int Level
+    {
+        get { return level; }
+        set { level = value; }
+    }
+
     void Start()
     {
 
@@ -25,6 +41,20 @@ public class SunglucScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GameObject nvc = GameObject.FindGameObjectWithTag("Player");
+        if (nvc.GetComponent<ManageLevel>().Level == 15 && upLevel2 == true)
+        {
+            level++;
+            upLevel2 = false;
+            Debug.Log("Update sung luc level 2");
+        }
+        if (mainCharacter.GetComponent<ManageLevel>().Level == 30 && upLevel3 == true)
+        {
+            level++;
+            upLevel3 = false;
+            Debug.Log("Update sung luc level 3");
+        }
+
         GameObject enemy = getNearestEnemy();
         if (enemy != null)
         {

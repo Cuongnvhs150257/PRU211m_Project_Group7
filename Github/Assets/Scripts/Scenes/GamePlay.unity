@@ -1974,10 +1974,18 @@ PrefabInstance:
       objectReference: {fileID: 9001151950475808025, guid: 59838e9873f2e2342a31bf1d6c82b706, type: 3}
     - target: {fileID: 7679533272451636097, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
       propertyPath: m_TagString
-      value: gun
+      value: tieulien
       objectReference: {fileID: 0}
     - target: {fileID: 7679533272451636099, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679533272451636100, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
+      propertyPath: dame
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679533272451636100, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
+      propertyPath: level
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7679533272451636100, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
@@ -1986,7 +1994,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7679533272562475713, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
       propertyPath: m_TagString
-      value: gun
+      value: sungluc
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679533272562475715, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
+      propertyPath: dame
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679533272562475715, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
+      propertyPath: level
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7679533272562475715, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
       propertyPath: m_Enabled
@@ -1998,7 +2014,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7679533272752864978, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
       propertyPath: m_TagString
-      value: gun
+      value: shotgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679533272752864980, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
+      propertyPath: dame
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679533272752864980, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
+      propertyPath: level
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7679533272752864981, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
       propertyPath: m_Enabled

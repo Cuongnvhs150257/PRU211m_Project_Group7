@@ -10,6 +10,7 @@ public class GunManage : MonoBehaviour
     public GameObject sungLuc;
     void Start()
     {
+        sungLuc.SetActive(true);
         shotgun.SetActive(false);
         tieuLien.SetActive(false);
     }

@@ -4,23 +4,7 @@ using UnityEngine;
 
 public class BulletTieuLien : MonoBehaviour
 {
-    public int dame = 5;
-    public int level;
-    bool upLevel2 = true;
-    bool upLevel3 = true;
-    public int Dame
-    {
-        get { return dame; }
-        set { dame = value; }
-    }
-    public int Level
-    {
-        get { return level; }
-        set { level = value; }
-    }
-    // Start is called before the first frame update
     private float timer;
-    private float timer2;
     void Start()
     {
 
@@ -29,19 +13,6 @@ public class BulletTieuLien : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject mainCharacter = GameObject.FindGameObjectWithTag("Player");
-        if (mainCharacter.GetComponent<ManageLevel>().Level == 20 && upLevel2 == true)
-        {
-            level++;
-            upLevel2 = false;
-            Debug.Log("Update level 2");
-        }
-        if (mainCharacter.GetComponent<ManageLevel>().Level == 35 && upLevel3 == true)
-        {
-            level++;
-            upLevel3 = false;
-            Debug.Log("Update level 3");
-        }
         timer += Time.deltaTime;
         if (timer > 2)
         {
@@ -56,11 +27,16 @@ public class BulletTieuLien : MonoBehaviour
         GameObject obj = other.gameObject;
         if (other.gameObject.CompareTag("enemies"))
         {
-            //tru di dame cua sung
+            //base dame main character
             GameObject mainCharacter = GameObject.FindGameObjectWithTag("Player");
-            int damage = mainCharacter.GetComponent<BaseDame>().BaseDamage;
-            obj.GetComponent<EnemyProperties>().Hp -= ((dame * level) + damage);
-            Debug.Log("Hp con " + obj.GetComponent<EnemyProperties>().Hp);
+            int baseDamage = mainCharacter.GetComponent<BaseDame>().BaseDamage;
+            //damage and level of gun
+            GameObject tieulien = GameObject.FindGameObjectWithTag("tieulien");
+            int bulletDame = tieulien.GetComponent<TieuLienScript>().Dame;
+            int levelGun = tieulien.GetComponent<TieuLienScript>().Level;
+
+            obj.GetComponent<EnemyProperties>().Hp -= ((bulletDame * levelGun) + baseDamage);
+            Debug.Log("Dame gay ra: " + ((bulletDame * levelGun) + baseDamage));
             if (obj.gameObject.GetComponent<EnemyProperties>().Hp <= 0)
             {
                 mainCharacter.GetComponent<PowerManage>().Count++;
