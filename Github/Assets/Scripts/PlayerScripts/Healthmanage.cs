@@ -16,7 +16,7 @@ public class Healthmanage : MonoBehaviour
 
     public bool addHealth = false;
 
-    public float dame = 10;
+    public float dametest = 10;
 
     float timer;
 
@@ -45,7 +45,7 @@ public class Healthmanage : MonoBehaviour
         healText.text = "HP: " + healthAmount.ToString() + "/" + maxHealth.ToString();
         if (Input.GetKeyDown(KeyCode.G))
         {
-            takeDamage(dame);
+            takeDamage(dametest);
 
         }
         if (Input.GetKeyDown(KeyCode.J))
@@ -55,19 +55,18 @@ public class Healthmanage : MonoBehaviour
 
         if (shieldActivated == true)
         {
-            dame = 0;
+            dametest = 0;
             timer += Time.deltaTime;
             if (timer >= 5)
             {
-                shieldActivated = false;
-                dame = 10;
+                shieldActivated = false;            
                 timer = 0;
                 Debug.Log("het khien");
             }
         }
         else
         {
-            dame = 10;
+            dametest = 10;
         }
 
         if (addHealth == true)

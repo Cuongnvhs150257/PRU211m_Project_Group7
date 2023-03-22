@@ -76,11 +76,11 @@ public class EnemyProperties : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D other)
     {
         
-        isAttacking = true;
+        
         
         if (other.gameObject.CompareTag("Player"))
         {
-
+            isAttacking = true;
             StartCoroutine(AttackPlayer(other.gameObject));
         }
     }
