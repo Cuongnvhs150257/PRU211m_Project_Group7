@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
         float postionYIndex = PlayerPrefs.GetFloat("postionY");
         Debug.Log(postionXIndex);
 
-        if(postionXIndex !=null && postionYIndex != null)
+        if(postionXIndex !=0 && postionYIndex != 0)
         {
             Vector3 loadedPosition = new Vector3(postionXIndex, postionYIndex, 0);
 
