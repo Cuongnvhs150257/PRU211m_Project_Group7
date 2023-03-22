@@ -40,7 +40,7 @@ public class Creep4Generate : MonoBehaviour
 
         timer += Time.deltaTime;
 
-        if (timer >= 60)
+        if (timer >= 80)
         {
 
             if (spawnTimer.Finished)
