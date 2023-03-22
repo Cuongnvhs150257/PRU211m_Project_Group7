@@ -1900,6 +1900,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7679533271235140080, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7679533271235140088, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
       propertyPath: MyscoreText
       value: 
