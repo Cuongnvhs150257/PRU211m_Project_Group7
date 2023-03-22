@@ -16,6 +16,7 @@ TagManager:
   - sungluc
   - shotgun
   - tieulien
+  - manageEnemy
   layers:
   - Default
   - TransparentFX

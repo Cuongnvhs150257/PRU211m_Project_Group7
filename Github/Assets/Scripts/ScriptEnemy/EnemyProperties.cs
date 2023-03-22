@@ -11,35 +11,24 @@ public class EnemyProperties : MonoBehaviour
     public int hp;
     public int damage;
     public int exp;
-
     public int maxHp;
-
-    private float timer;
 
     private void Start()
     {
-        timer = 0;
+        GameObject manageHp = GameObject.FindGameObjectWithTag("manageEnemy");
+        hp += manageHp.GetComponent<ManageEnemy>().Hp;
+        damage+=manageHp.GetComponent<ManageEnemy>().Dame;
+        maxHp=hp;
         //StartCoroutine(AttackPlayer());
     }
 
     private void Update()
     {
-        timer += Time.deltaTime;
-
-        if (timer >= 40)
-        {
-            hp += 30;
-            maxHp += 30;
-            damage++;
-            timer = 0;
-        }
-
         healBar.fillAmount = (float)hp / maxHp;
         if (hp <= 0)
         {
             Destroy(gameObject);
         }
-
     }
 
     public int MaxHp

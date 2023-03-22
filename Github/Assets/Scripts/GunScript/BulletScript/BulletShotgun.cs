@@ -8,7 +8,7 @@ public class BulletShotgun : MonoBehaviour
     private float timer;
     void Start()
     {
-
+        timer = 0;
     }
 
     // Update is called once per frame
