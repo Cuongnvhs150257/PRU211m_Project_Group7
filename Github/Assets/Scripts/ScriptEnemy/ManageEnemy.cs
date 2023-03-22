@@ -31,7 +31,7 @@ public class ManageEnemy : MonoBehaviour
         timer+=Time.deltaTime;
         if(timer > 60)
         {
-            hp += 30;
+            hp += 25;
             damage++;
             timer = 0;
         }
