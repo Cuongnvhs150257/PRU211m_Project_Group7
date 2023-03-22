@@ -13,6 +13,9 @@ TagManager:
   - BulletEnemyFly
   - EnemyFly
   - mainmenu
+  - sungluc
+  - shotgun
+  - tieulien
   layers:
   - Default
   - TransparentFX

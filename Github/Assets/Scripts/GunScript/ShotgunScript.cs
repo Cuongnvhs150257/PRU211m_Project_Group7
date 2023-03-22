@@ -17,6 +17,22 @@ public class ShotgunScript : MonoBehaviour
     public AudioSource shotGunSound;
     // Start is called before the first frame update
     float distanceWorking = 4.5f;
+
+    //for bullet
+    public int dame;//default 5
+    public int level;
+    bool upLevel2 = true;
+    bool upLevel3 = true;
+    public int Dame
+    {
+        get { return dame; }
+        set { dame = value; }
+    }
+    public int Level
+    {
+        get { return level; }
+        set { level = value; }
+    }
     void Start()
     {
 
@@ -25,6 +41,20 @@ public class ShotgunScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GameObject nvc = GameObject.FindGameObjectWithTag("Player");
+        if (nvc.GetComponent<ManageLevel>().Level == 25 && upLevel2 == true)
+        {
+            level++;
+            upLevel2 = false;
+            Debug.Log("Update shotgun level 2");
+        }
+        if (mainCharacter.GetComponent<ManageLevel>().Level == 40 && upLevel3 == true)
+        {
+            level++;
+            upLevel3 = false;
+            Debug.Log("Update shotgun level 3");
+        }
+
         GameObject enemy = getNearestEnemy();
         if (enemy != null)
         {

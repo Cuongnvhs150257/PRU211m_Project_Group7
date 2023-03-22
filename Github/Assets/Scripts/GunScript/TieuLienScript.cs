@@ -15,7 +15,22 @@ public class TieuLienScript : MonoBehaviour
     private float yPositionForRotate = 0.1938882f;
     private float xPosiotionForRotate = 0.2431382f;
     public AudioSource tieuLienSound;
-    // Start is called before the first frame update
+
+    //for bullet
+    public int dame;//default 5
+    public int level;
+    bool upLevel2 = true;
+    bool upLevel3 = true;
+    public int Dame
+    {
+        get { return dame; }
+        set { dame = value; }
+    }
+    public int Level
+    {
+        get { return level; }
+        set { level = value; }
+    }
     void Start()
     {
     }
@@ -23,6 +38,19 @@ public class TieuLienScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GameObject nvc = GameObject.FindGameObjectWithTag("Player");
+        if (nvc.GetComponent<ManageLevel>().Level == 20 && upLevel2 == true)
+        {
+            level++;
+            upLevel2 = false;
+            Debug.Log("Update sung tieu lien level 2");
+        }
+        if (mainCharacter.GetComponent<ManageLevel>().Level == 35 && upLevel3 == true)
+        {
+            level++;
+            upLevel3 = false;
+            Debug.Log("Update sung tieu lien level 3");
+        }
         GameObject enemy = getNearestEnemy();
         if (enemy != null)
         {
@@ -37,7 +65,6 @@ public class TieuLienScript : MonoBehaviour
             {
                 Vector3 vtr = new Vector3(transform.localScale.x, -transform.localScale.y, 0);
                 transform.localScale = new Vector3(xPosiotionForRotate, -yPositionForRotate, 0);
-                //Debug.Log("Ket qua: " + transform.localScale);
             }
             else
             {
