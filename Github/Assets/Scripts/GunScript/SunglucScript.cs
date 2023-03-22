@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SunglucScript : MonoBehaviour
 {
-    private Camera mainCam;
     public GameObject bullet;
     public Transform mainCharacter;
     public Transform nongsung;
