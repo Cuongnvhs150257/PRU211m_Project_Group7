@@ -418,6 +418,9 @@ MonoBehaviour:
   damage: 5
   exp: 8
   maxHp: 30
+  attack: 8
+  attackSpeed: 0.8
+  isAttacking: 0
 --- !u!1 &3852884356825846148
 GameObject:
   m_ObjectHideFlags: 0

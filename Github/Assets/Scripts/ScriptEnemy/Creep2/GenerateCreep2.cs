@@ -39,7 +39,7 @@ public class GenerateCreep2 : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer >= 30)
+        if (timer >= 40)
         {
 
             if (spawnTimer.Finished)
