@@ -122,7 +122,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  dame: 2
+  Friezel: 0
+  dame: 5
 --- !u!58 &7500944965481528311
 CircleCollider2D:
   m_ObjectHideFlags: 0
