@@ -20,6 +20,9 @@ public class BulletEnemy : MonoBehaviour
 
     private float timer;
 
+    private float timerDame;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +57,13 @@ public class BulletEnemy : MonoBehaviour
         {
             Destroy(gameObject);
             timer = 0;
+        }
+
+        timerDame += Time.deltaTime;
+        if (timerDame >= 60)
+        {
+            dame++;
+            timerDame = 0;
         }
     }
 
