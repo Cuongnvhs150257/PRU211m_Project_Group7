@@ -60,12 +60,11 @@ public class ManageLevel : MonoBehaviour
             levelCount.text = level.ToString();
             GameObject mainCharacter = GameObject.FindGameObjectWithTag("Player");
             mainCharacter.GetComponent<Healthmanage>().maxHealth += 15;
-            mainCharacter.GetComponent<Healthmanage>().healthAmount = mainCharacter.GetComponent<Healthmanage>().maxHealth;
+            mainCharacter.GetComponent<Healthmanage>().healthAmount += 15;
             mainCharacter.GetComponent<Healthmanage>().healText.text = mainCharacter.GetComponent<Healthmanage>().healthAmount.ToString()
                                + "/" + mainCharacter.GetComponent<Healthmanage>().maxHealth.ToString();
 
         
-
         }
        
         
