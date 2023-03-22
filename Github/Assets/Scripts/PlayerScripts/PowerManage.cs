@@ -33,7 +33,7 @@ public class PowerManage : MonoBehaviour
             
             takedame.GetComponent<BaseDame>().BaseDamage = takedame.GetComponent<BaseDame>().PowerBaseDamage;
             int x = takedame.GetComponent<BaseDame>().BaseDamage;
-            Debug.Log("Tang BaseDame: " + x);
+      
             timer += Time.deltaTime;
             if (timer >= 10)
             {

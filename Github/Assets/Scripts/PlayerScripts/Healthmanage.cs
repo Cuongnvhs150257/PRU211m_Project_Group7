@@ -57,11 +57,12 @@ public class Healthmanage : MonoBehaviour
         {
             dame = 0;
             timer += Time.deltaTime;
-            if (timer >= 3)
+            if (timer >= 5)
             {
                 shieldActivated = false;
                 dame = 10;
                 timer = 0;
+                Debug.Log("het khien");
             }
         }
         else
@@ -78,11 +79,19 @@ public class Healthmanage : MonoBehaviour
     }
     public void takeDamage(float dame)
     {
-        healthAmount -= dame;
-        if (healthAmount <= 0)
+        if (shieldActivated == false)
         {
-            MenuManager.GoToMenu(MenuName.End);
+            healthAmount -= dame;
+            if (healthAmount <= 0)
+            {
+                MenuManager.GoToMenu(MenuName.End);
+            }
         }
+        else
+        {
+            dame = 0;
+        }
+       
 
     }
     public void Heal(float healingAmount)
@@ -96,60 +105,60 @@ public class Healthmanage : MonoBehaviour
 
 
     ////////////////
-    public int attack = 10;
-    public float attackSpeed = 1f;
-    public bool isAttacking = false;
+    //public int attack = 10;
+    //public float attackSpeed = 1f;
+    //public bool isAttacking = false;
 
-    public void OnCollisionEnter2D(Collision2D other)
-    {
-        isAttacking = true;
-        if (other.gameObject.CompareTag("enemies"))
-        {
-            if (isAttacking)
-            {
-                EnemyProperties enemy = other.gameObject.GetComponent<EnemyProperties>();
-                if (enemy != null)
-                {
-                    int enemyDame = enemy.Damage;
-                    StartCoroutine(AttackPlayer(other.gameObject));
-                }
-            }
+    //public void OnCollisionEnter2D(Collision2D other)
+    //{
+    //    isAttacking = true;
+    //    if (other.gameObject.CompareTag("enemies"))
+    //    {
+    //        if (isAttacking)
+    //        {
+    //            EnemyProperties enemy = other.gameObject.GetComponent<EnemyProperties>();
+    //            if (enemy != null)
+    //            {
+    //                int enemyDame = enemy.Damage;
+    //                StartCoroutine(AttackPlayer(other.gameObject));
+    //            }
+    //        }
             
 
-        }
-        if (other.gameObject.CompareTag("testheal"))
-        {
-            Heal(10);
-        }
-    }
+    //    }
+    //    if (other.gameObject.CompareTag("testheal"))
+    //    {
+    //        Heal(10);
+    //    }
+    //}
 
 
 
 
-    public IEnumerator AttackPlayer(GameObject enemy)
-    {
+    //public IEnumerator AttackPlayer(GameObject enemy)
+    //{
 
-        do
-        {
-            int enemyDamage = enemy.GetComponent<EnemyProperties>().Damage;
-            takeDamage(enemyDamage);
-            yield return new WaitForSeconds(attackSpeed);
+    //    do
+    //    {
+    //        int enemyDamage = enemy.GetComponent<EnemyProperties>().Damage;
+    //        takeDamage(enemyDamage);
+    //        yield return new WaitForSeconds(attackSpeed);
 
-        }
-        while (isAttacking == true);
+    //    }
+    //    while (isAttacking == true);
 
-    }
+    //}
 
-    public void OnCollisionExit2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("enemies"))
-        {
-            // N?u ng??i ch?i r?i kh?i vùng va ch?m, d?ng tr? máu
-            StopCoroutine(AttackPlayer(other.gameObject));
-            isAttacking = false;
+    //public void OnCollisionExit2D(Collision2D other)
+    //{
+    //    if (other.gameObject.CompareTag("enemies"))
+    //    {
+    //        // N?u ng??i ch?i r?i kh?i vùng va ch?m, d?ng tr? máu
+    //        StopCoroutine(AttackPlayer(other.gameObject));
+    //        isAttacking = false;
 
-        }
-    }
+    //    }
+    //}
    
 
 }

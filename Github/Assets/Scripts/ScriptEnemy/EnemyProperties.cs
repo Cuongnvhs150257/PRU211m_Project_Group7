@@ -71,9 +71,13 @@ public class EnemyProperties : MonoBehaviour
     public float attackSpeed = 1f;
     public bool isAttacking = false;
 
+    
+
     public void OnCollisionEnter2D(Collision2D other)
     {
+        
         isAttacking = true;
+        
         if (other.gameObject.CompareTag("Player"))
         {
 

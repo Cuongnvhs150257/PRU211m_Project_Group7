@@ -44,6 +44,6 @@ public class BaseDame : MonoBehaviour
             timer = 0;
             
         }
-        Debug.Log("Dame hien tai: " + baseDamage);
+        //Debug.Log("Dame hien tai: " + baseDamage);
     }
 }
