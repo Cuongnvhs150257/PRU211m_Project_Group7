@@ -29,7 +29,7 @@ public class ManageEnemy : MonoBehaviour
     void Update()
     {
         timer+=Time.deltaTime;
-        if(timer > 65)
+        if(timer > 80)
         {
             hp += 20;
             damage++;
