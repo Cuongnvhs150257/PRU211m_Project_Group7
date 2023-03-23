@@ -39,6 +39,7 @@ public class BasicGenerate : MonoBehaviour
 
     void SpawnObject()
     {
+
         Vector3 location = new Vector3(Random.Range(minSpawnX, maxSpawnX), Random.Range(minSpawnY, maxSpawnY),
                -Camera.main.transform.position.z);//z should be zero
 

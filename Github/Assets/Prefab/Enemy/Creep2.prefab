@@ -418,6 +418,7 @@ GameObject:
   - component: {fileID: 1708738483173454395}
   - component: {fileID: 5047934540897354899}
   - component: {fileID: 7335262703053317688}
+  - component: {fileID: -8198436946615719807}
   m_Layer: 0
   m_Name: Creep2
   m_TagString: enemies
@@ -575,6 +576,21 @@ MonoBehaviour:
   damage: 2
   exp: 6
   maxHp: 30
+  attack: 10
+  attackSpeed: 1
+  isAttacking: 0
+--- !u!114 &-8198436946615719807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4044126259067008516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5f004f4010e21149bded69b76dfa724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8351712533155824453
 GameObject:
   m_ObjectHideFlags: 0

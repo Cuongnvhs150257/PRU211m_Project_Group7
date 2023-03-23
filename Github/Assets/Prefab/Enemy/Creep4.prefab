@@ -258,6 +258,7 @@ GameObject:
   - component: {fileID: 3557218524688959987}
   - component: {fileID: 3433417875467899202}
   - component: {fileID: 4576814750356673302}
+  - component: {fileID: 4183843372826471146}
   m_Layer: 0
   m_Name: Creep4
   m_TagString: enemies
@@ -421,6 +422,18 @@ MonoBehaviour:
   attack: 8
   attackSpeed: 0.8
   isAttacking: 0
+--- !u!114 &4183843372826471146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3242991214747640848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5f004f4010e21149bded69b76dfa724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3852884356825846148
 GameObject:
   m_ObjectHideFlags: 0

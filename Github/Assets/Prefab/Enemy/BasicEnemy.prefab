@@ -345,6 +345,7 @@ GameObject:
   - component: {fileID: 7915816908962187233}
   - component: {fileID: 682672952712449580}
   - component: {fileID: 4926778333240962671}
+  - component: {fileID: 4645998876173363975}
   m_Layer: 0
   m_Name: BasicEnemy
   m_TagString: enemies
@@ -499,3 +500,18 @@ MonoBehaviour:
   damage: 1
   exp: 5
   maxHp: 10
+  attack: 10
+  attackSpeed: 1
+  isAttacking: 0
+--- !u!114 &4645998876173363975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9001151950475808025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5f004f4010e21149bded69b76dfa724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
