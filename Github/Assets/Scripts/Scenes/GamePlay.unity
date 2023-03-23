@@ -225,8 +225,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 509.381, y: 235.58003}
-  m_SizeDelta: {x: 879.6, y: 406.8}
+  m_AnchoredPosition: {x: 493.95, y: 242.94}
+  m_SizeDelta: {x: 852.95, y: 419.51}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &39771847
 GameObject:
@@ -1026,8 +1026,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 387, y: 181}
-  m_SizeDelta: {x: 100, y: 40}
+  m_AnchoredPosition: {x: 375.08, y: 189.76}
+  m_SizeDelta: {x: 102.8, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1187448850
 MonoBehaviour:
@@ -1499,8 +1499,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 509.381, y: 235.58003}
-  m_SizeDelta: {x: 879.6, y: 406.8}
+  m_AnchoredPosition: {x: 493.95, y: 242.94}
+  m_SizeDelta: {x: 852.95, y: 419.51}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1626933289
 PrefabInstance:
@@ -2018,6 +2018,10 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 9001151950475808025, guid: 59838e9873f2e2342a31bf1d6c82b706, type: 3}
+    - target: {fileID: 7679533272179395399, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
+      propertyPath: orthographic size
+      value: 5.5819917
+      objectReference: {fileID: 0}
     - target: {fileID: 7679533272451636097, guid: 4ed1d9f505042a64ea605860896a1454, type: 3}
       propertyPath: m_TagString
       value: tieulien
